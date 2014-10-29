@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+/**
+ * Partial imports
+ */
+/**
+ * Colors
+ */
+/**
+ * Fonts
+ */
+/**
+ * Global settings
+ */
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
+}
+
+.main-container {
+  height: 100%;
+  width: 100%;
+}
+
+.nested-container {
+  padding: 30px;
+}
+
+/**
+ * Input buttons
+ */
+.input-text {
+  height: 2.375em;
+  padding: 0;
+  float: none;
+  border: 0;
+  box-shadow: none;
+  border-radius: 0;
+  background: 0 0;
+  border-bottom: 2px solid #FFFFFF;
+  color: #FFFFFF;
+  outline: none;
+  font-size: 1.25em;
+  font-weight: normal;
+}
+
+.input-group {
+  margin-bottom: 10px;
+}
+
+label {
+  height: 3.125em;
+  line-height: 3.125em;
+}
+
+.button {
+  position: relative;
+  padding: 8px 30px;
+  border: 0;
+  margin: 10px 1px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #FFFFFF;
+  outline: 0 !important;
+  box-shadow: 0;
+}
+
+.button:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/**
+ * Centering
+ */
+.center-parent {
+  display: table;
+}
+
+.center-child {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+/**
+ * Warning/Info
+ */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  height: 45px;
+  width: 100%;
+  color: #FFFFFF;
+  text-align: center;
+}
+.toast .error-msg {
+  background-color: #DD0039;
+  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+  padding: 15px 25px 15px 25px;
+}
+.toast .error-msg span {
+  font-weight: bold;
+}
+
+/**
+ * Section boxes
+ */
+.section-box {
+  background-color: #FFFFFF;
+  box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+  padding: 15px;
+}
+.section-box .section-box-head {
+  height: 2.5em;
+  line-height: 2.5em;
+  border-bottom: 1px solid #E6E6E6;
+}
+
+.animate-show {
+  opacity: 1;
+}
+
+.animate-show.ng-hide-add.ng-hide-add-active,
+.animate-show.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all linear 0.5s;
+  transition: all linear 0.5s;
+}
+
+.animate-show.ng-hide {
+  opacity: 0;
+}
+
+.ags-loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.ags-loader i {
+  color: #5ACA00;
+}
+
+/**
+ * View imports
+ */
