@@ -1,6 +1,6 @@
 /**
  * Input buttons
- */
+ *
 .input-text {
     height: em(38);
     padding: 0;
@@ -45,7 +45,7 @@ label {
 
 /**
  * Centering
- */
+ *
 .center-parent {
     display: table;
 }
@@ -57,7 +57,7 @@ label {
 
 /**
  * Warning/Info
- */
+ *
 .toast {
     @include position(fixed, null null 30px null);
     @include size(100% 45px);

@@ -1,0 +1,8 @@
+#landing {
+
+	.viewport-section {
+		@include size(100% 100%);
+
+		background-color: red;
+	}
+}
