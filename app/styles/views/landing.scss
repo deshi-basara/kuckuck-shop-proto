@@ -1,8 +1,9 @@
 #landing {
+    height: 100%;
+    width: 100%;
 
-	.viewport-section {
-		@include size(100% 100%);
-
-		background-color: red;
-	}
+    .section {
+        margin-top: -60px;
+        text-align: center;
+    }
 }

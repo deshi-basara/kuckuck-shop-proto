@@ -18,11 +18,12 @@
         -->
         <!-- build:css styles/vendor.min.css -->
         <!-- bower:css -->
-        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
         <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css" />
         <link rel="stylesheet" href="../bower_components/ng-table/ng-table.css" />
         <link rel="stylesheet" href="../bower_components/sweetalert/lib/sweet-alert.css" />
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../bower_components/pagepiling.js/jquery.pagepiling.css" />
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -35,18 +36,18 @@
 
         <script src="../bower_components/modernizr/modernizr.js"></script>
     </head>
-    <body ng-app="app">
+    <body ng-app="app" ng-controller="MainCtrl as main">
 
         <!--
             Navigation
         -->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
 
                 <!-- Logo -->
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
-                        <img alt="Schreinerei" src="...">
+                        <img alt="Schreinerei" src="images/logo.png" style="width: 18px; height: auto;">
                     </a>
                 </div>
 
@@ -75,8 +76,8 @@
 
                     <!-- Nav right -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="">Login</a></li>
-                        <li>
+                        <li><a href="">Einloggen</a></li>
+                        <li ng-click="main.toggleBag()">
                             <a href=""><i class="glyphicon glyphicon-shopping-cart"></i></a>
                         </li>
                     </ul><!-- / Nav right -->
@@ -93,7 +94,17 @@
         <!--
             The ui-view directive tells $state where to place the templates
         -->
-        <div ui-view class="main-container"></div>
+        <div ui-view class="main-container" ng-class="{ 'slide-left': main.bagOpen }"></div>
+
+        <!--
+            Shopping Bag
+        -->
+        <div id="shopping-bag">Shopping</div>
+
+        <!--
+            Footer
+        -->
+        <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
 
         <!--
             Vendor scripts
@@ -101,7 +112,6 @@
         <!-- build:js scripts/vendor.min.js -->
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
-        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <script src="../bower_components/angular/angular.js"></script>
         <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="../bower_components/traceur/traceur.js"></script>
@@ -112,6 +122,8 @@
         <script src="../bower_components/ng-table/ng-table.js"></script>
         <script src="../bower_components/sweetalert/lib/sweet-alert.js"></script>
         <script src="../bower_components/angular-sweetalert/SweetAlert.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../bower_components/pagepiling.js/jquery.pagepiling.min.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -125,6 +137,7 @@
         <script src="scripts/filters/agsBytes.filter.js"></script>
         <script src="scripts/directives/progress/progress.directive.js"></script>
         <script src="scripts/routes/landing/landing.controller.js"></script>
+        <script src="scripts/routes/main/main.controller.js"></script>
         <script src="scripts/services/auth/auth.service.js"></script>
         <!-- endinject -->
         <!-- endbuild -->
