@@ -25,7 +25,8 @@
     "ng-table": "~0.3.3",
     "angular-sweetalert": "~1.0.3",
     "bootstrap": "~3.3.0",
-    "pagepiling.js": "~0.0.8"
+    "pagepiling.js": "~0.0.8",
+    "angular-loading-bar": "~0.6.0"
   },
   "devDependencies": {
     "bourbon": "~4.0.2",
