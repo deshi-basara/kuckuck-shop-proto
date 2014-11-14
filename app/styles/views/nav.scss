@@ -2,5 +2,10 @@
     .container-fluid {
         height: 70px;
         padding-top: 13px;
+
+        .collapse {
+            padding-left: 75px;
+            padding-right: 75px;
+        }
     }
 }
