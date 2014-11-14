@@ -22,7 +22,7 @@
                 menu: null,
                 direction: 'vertical',
                 verticalCentered: true,
-                sectionsColor: ['#4BBFC3', '#f2f2f2', '#7BAABE', 'whitesmoke', '#000'],
+                sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
                 anchors: [],
                 scrollingSpeed: 700,
                 easing: 'swing',
@@ -62,8 +62,7 @@
          * Changes the product slider's position accordingly to its slider position.
          */
         function sliderChange() {
-            console.log($('.product-image').length);
-            $('.product-image').css('transform', 'translate3d(0,0,0)');
+
         }
 
         function sliderTranslate(index) {
@@ -75,7 +74,7 @@
         angular.extend(ctrl, {
             sliderPos: {index: 0},
             //sliderTranslate: {'-webkit-transform': 'translate3d(0px, 0px, 0px'},
-            slidesArray: [{name: 'blau.png'}, {name: 'gelb.png'}, {name: 'rosa.png'},{name: 'blau.png'}, {name: 'gelb.png'}, {name: 'rosa.png'}],
+            slidesArray: [{name: 'blau.png', price: 100}, {name: 'gelb.png', price: 100}, {name: 'rosa.png', price: 100},{name: 'blau.png', price: 100}, {name: 'gelb.png', price: 100}, {name: 'rosa.png', price: 100}],
 
             sliderChange: sliderChange,
             sliderIndex: sliderIndex,

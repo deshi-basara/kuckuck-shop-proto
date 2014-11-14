@@ -33,11 +33,58 @@
                     width: 280px;
 
                     @include transform(translate3d(0, 0, 0));
+                    //-webkit-transform: scale(1) !important;
+
                     @include transition(transform 0.7s ease-in-out);
 
                     img {
+                        margin-top: 20px;
                         height: auto;
-                        width: 100%;
+                        width: 90%;
+                        z-index: 1;
+                    }
+
+                    .product-config {
+                        margin-top: -180px;
+                        text-align: left;
+                        z-index: 2;
+                        overflow: hidden;
+
+                        p {
+                            display: inline-block;
+                            margin: 0 0 0.25em;
+                            padding: 0.4em 1em;
+                            background: $kuck-white;
+                            color: #2f3238;
+                            text-transform: none;
+                            opacity: 0;
+                            cursor: default;
+
+                            @include transform(translate3d(-260px, 0, 0));
+                            @include transition(transform 0.5s ease-in-out 0.3s, opacity 0.3s ease-in-out 0.3s);
+                        }
+
+                        .config {
+                            cursor: pointer;
+
+                            @include transform(translate3d(-260px, 0, 0));
+                            @include transition(transform 0.5s ease-in-out 0.2s, opacity 0.3s ease-in-out 0.2s);
+                        }
+
+                        .config:hover {
+                            box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
+
+                            @include transition(box-shadow .28s cubic-bezier(0.4,0,.2,1));
+                        }
+                    }
+                }
+
+                .product-image:hover {
+                    //-webkit-transform: scale(1.06) !important;
+
+                    .product-config p {
+                        opacity: 1;
+                        @include transform(translate3d(15px, 0, 0));
                     }
                 }
 
