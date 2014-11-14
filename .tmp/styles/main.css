@@ -118,7 +118,7 @@ label {
  * Section boxes
  */
 .section-box {
-  background-color: white;
+  background-color: #f2f2f2;
   box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
   padding: 15px;
 }
@@ -180,6 +180,61 @@ label {
 #landing .section {
   margin-top: -60px;
   text-align: center;
+}
+#landing #product-section h1 {
+  margin-bottom: 100px;
+  color: #f2f2f2;
+}
+#landing #product-section .product-slider {
+  position: relative;
+  min-height: 600px;
+  width: 60%;
+  left: 21%;
+  overflow: hidden;
+}
+#landing #product-section .product-slider ul {
+  position: relative;
+  width: 80%;
+  text-decoration: none;
+  list-style: none;
+}
+#landing #product-section .product-slider ul .product-image {
+  position: absolute;
+  float: left;
+  width: 280px;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 0.7s ease-in-out;
+  transition: transform 0.7s ease-in-out;
+}
+#landing #product-section .product-slider ul .product-image img {
+  height: auto;
+  width: 100%;
+}
+#landing #product-section .product-slider-control input {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  width: 20%;
+  margin-left: 40%;
+  -webkit-appearance: none;
+  background-color: #f2f2f2;
+  height: 1px;
+}
+#landing #product-section .product-slider-control input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  border: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: #ffa600;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+  margin-top: -2px;
+}
+#landing #product-section .product-slider-control input[type=range]:focus {
+  outline: none;
+}
+#landing #product-section .product-slider-current {
+  color: #f2f2f2;
 }
 
 #shopping-bag {

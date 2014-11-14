@@ -39,19 +39,5 @@ angular
 
 .run(function($state, AuthService) {
 
-  // check if the user has a active session
-  AuthService.hasSession()
-    .then(function(success) {
-      console.log(success);
-    }, function(error) {
-      alert(error);
-    });
 
-
-  var hasAuth = false;
-
-  if(hasAuth) {
-    console.log('rediec');
-    $state.go('login');
-  }
-})
+});

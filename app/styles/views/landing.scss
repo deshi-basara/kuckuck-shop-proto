@@ -6,4 +6,75 @@
         margin-top: -60px;
         text-align: center;
     }
+
+    #product-section {
+
+        h1 {
+            margin-bottom: 100px;
+            color: $kuck-white;
+        }
+
+        .product-slider {
+            position: relative;
+            min-height: 600px;
+            width: 60%;
+            left: 21%;
+            overflow: hidden;
+
+            ul {
+                position: relative;
+                width: 80%;
+                text-decoration: none;
+                list-style: none;
+
+                .product-image {
+                    position: absolute;
+                    float: left;
+                    width: 280px;
+
+                    @include transform(translate3d(0, 0, 0));
+                    @include transition(transform 0.7s ease-in-out);
+
+                    img {
+                        height: auto;
+                        width: 100%;
+                    }
+                }
+
+            }
+        }
+
+        .product-slider-control {
+
+            input {
+                margin-top: 15px;
+                margin-bottom: 10px;
+                width: 20%;
+                margin-left: 40%;
+
+                -webkit-appearance: none;
+                background-color: $kuck-white;
+                height: 1px;
+            }
+
+            input[type=range]::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                border: none;
+                height: 16px;
+                width: 16px;
+                border-radius: 50%;
+                background: $kuck-orange;
+                box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+                margin-top: -2px;
+            }
+
+            input[type=range]:focus {
+                outline: none;
+            }
+        }
+
+        .product-slider-current {
+            color: $kuck-white;
+        }
+    }
 }

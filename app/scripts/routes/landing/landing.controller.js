@@ -22,7 +22,7 @@
                 menu: null,
                 direction: 'vertical',
                 verticalCentered: true,
-                sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+                sectionsColor: ['#4BBFC3', '#f2f2f2', '#7BAABE', 'whitesmoke', '#000'],
                 anchors: [],
                 scrollingSpeed: 700,
                 easing: 'swing',
@@ -50,20 +50,36 @@
         });
 
         /**
-         * [openBag description]
-         * @return {[type]} [description]
+         * Holdes the current sliderIndex and computes it with the length of the
+         * sliderArray.
+         * @return {String} [SliderIndex / SliderLength]
          */
-        function openBag() {
-            console.log('open');
-            ctrl.bagOpen = true;
+        function sliderIndex() {
+            return (parseInt(ctrl.sliderPos.index) + 1) + ' / ' + ctrl.slidesArray.length;
+        }
+
+        /**
+         * Changes the product slider's position accordingly to its slider position.
+         */
+        function sliderChange() {
+            console.log($('.product-image').length);
+            $('.product-image').css('transform', 'translate3d(0,0,0)');
+        }
+
+        function sliderTranslate(index) {
+            return {'-webkit-transform': 'translate3d('+ parseInt(ctrl.sliderPos.index) * -410  +'px,0,0)'};
         }
 
         //////////////////////
 
         angular.extend(ctrl, {
-            //bagOpen: false,
+            sliderPos: {index: 0},
+            //sliderTranslate: {'-webkit-transform': 'translate3d(0px, 0px, 0px'},
+            slidesArray: [{name: 'blau.png'}, {name: 'gelb.png'}, {name: 'rosa.png'},{name: 'blau.png'}, {name: 'gelb.png'}, {name: 'rosa.png'}],
 
-            //openBag: openBag
+            sliderChange: sliderChange,
+            sliderIndex: sliderIndex,
+            sliderTranslate: sliderTranslate
         });
     }
 

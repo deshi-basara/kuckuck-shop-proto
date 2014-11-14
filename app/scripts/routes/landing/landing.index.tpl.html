@@ -1,6 +1,23 @@
 <div id="landing">
 
-    <div class="section">Some section</div>
+    <div id="product-section" class="section">
+        <h1>Entdecke die Welt der Kuckucksuhren</h1>
+
+        <div class="product-slider">
+            <ul>
+                <li class="product-image" ng-repeat="slide in ctrl.slidesArray" style="left: {{$index * 410}}px" ng-style="ctrl.sliderTranslate({{ $index }})">
+                    <img ng-src="images/watches/classic/{{ slide.name }}">
+                </li>
+            </ul>
+        </div>
+        <div class="product-slider-control">
+            <input type="range" min="0" max="5" value="0" step="1" list="volsettings" ng-model="ctrl.sliderPos.index" ng-change="ctrl.sliderChange()">
+            <datalist id="volsettings">
+                <option ng-repeat="slide in ctrl.slidesArray">{{ $index }}</option>
+            </datalist>
+        </div>
+        <div class="product-slider-current">{{ ctrl.sliderIndex() }}</div>
+    </div>
     <div class="section">Some section</div>
     <div class="section">Some section</div>
 
