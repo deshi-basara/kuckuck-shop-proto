@@ -30,8 +30,8 @@
                 loopTop: false,
                 css3: true,
                 navigation: {
-                    'textColor': '#000',
-                    'bulletsColor': '#000',
+                    'textColor': '#FFA600',
+                    'bulletsColor': '#f2f2f2',
                     'position': 'left',
                     'tooltips': ['Start', 'Fertige Produkte', 'Zum Konfigurator']
                 },
