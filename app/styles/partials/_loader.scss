@@ -1,7 +1,18 @@
 .ags-loader {
 	@include position(fixed, 0 0 0 0);
+    background-color: #FFFFFF;
+    z-index: 200;
+    opacity: 0;
 
-	i {
-		//color: $glf-green;
-	}
+    @include transition(opacity 0.3s ease-in-out);
+
+    img {
+        position: absolute;
+        top: 44%;
+        left: 46%;
+    }
+}
+
+.ags-loader.loading {
+    opacity: 1;
 }

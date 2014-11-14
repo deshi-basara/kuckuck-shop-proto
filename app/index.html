@@ -87,7 +87,10 @@
         <!--
             Custom loader directive
         -->
-        <div ags-loaders></div>
+        <!--<ags-loaders></ags-loaders>-->
+        <div class="ags-loader" ng-class="{ 'loading': main.isLoading }" ng-show="main.isLoading">
+            <img ng-src="images/preloaders/Preloader_2/Preloader_2.gif">
+        </div>
 
         <!--
             The ui-view directive tells $state where to place the templates
@@ -134,11 +137,11 @@
         <!-- build:js scripts/main.min.js -->
         <!-- inject:js -->
         <script src="scripts/app.js"></script>
-        <script src="scripts/directives/loader.js"></script>
         <script src="scripts/filters/agsBytes.filter.js"></script>
+        <script src="scripts/directives/loader/loader.directive.js"></script>
         <script src="scripts/directives/progress/progress.directive.js"></script>
-        <script src="scripts/routes/main/main.controller.js"></script>
         <script src="scripts/routes/landing/landing.controller.js"></script>
+        <script src="scripts/routes/main/main.controller.js"></script>
         <script src="scripts/services/auth/auth.service.js"></script>
         <!-- endinject -->
         <!-- endbuild -->

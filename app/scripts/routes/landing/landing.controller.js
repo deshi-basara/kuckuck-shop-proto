@@ -6,12 +6,12 @@
         .module('app')
         .controller('LandingCtrl', LandingCtrl);
 
-    LandingCtrl.$inject = ['$scope'];
+    LandingCtrl.$inject = ['$scope', '$rootScope'];
 
     /**
      * Handles the landing view and all interactions
      */
-    function LandingCtrl($scope) {
+    function LandingCtrl($scope, $rootScope) {
         var ctrl = this;
 
         /**
@@ -48,6 +48,9 @@
                     checkPillingAnimation(index);
                 },
                 afterRender: function(){
+
+                    $rootScope.$broadcast('loader.hide');
+
                     // start the video
                     $('#video-section video').get(0).play();
                 },
