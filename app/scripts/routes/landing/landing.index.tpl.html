@@ -1,13 +1,43 @@
 <div id="landing">
 
     <!-- Section 1 -->
+    <div id="product-section" class="section">
+    Video
+    </div><!-- / Section 1 -->
+
+    <!-- Section 2 -->
+    <div id="product-section" class="section">
+        <h1>Entdecke die Welt der Kuckucksuhren</h1>
+
+        <div class="product-slider" ng-class="{ 'init-animate': ctrl.startAnimation.productSlider === false }">
+            <ul>
+                <li class="product-image" ng-repeat="slide in ctrl.slidesArray" style="left: {{$index * 410}}px" ng-style="ctrl.sliderTranslate({{ $index }})">
+                    <img ng-src="images/watches/classic/{{ slide.name }}">
+                    <div class="product-config">
+                        <p class="price section-box">{{ slide.price }}€</p>
+                        <p class="config section-box">Jetzt nach deinen Wünschen anpassen</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="product-slider-control">
+            <input type="range" min="0" max="5" value="0" step="1" list="volsettings" ng-model="ctrl.sliderPos.index" ng-change="ctrl.sliderChange()">
+            <datalist id="volsettings">
+                <option ng-repeat="slide in ctrl.slidesArray">{{ $index }}</option>
+            </datalist>
+        </div>
+        <div class="product-slider-current">{{ ctrl.sliderIndex() }}</div>
+    </div><!-- / Section 2 -->
+
+    <!-- Section 3 -->
     <div id="configurator-section" class="section">
         <h1>Bringe deine Individualität zum Ausdruck</h1>
         <p>
             Lebe das Kind in Dir aus und entdecke die Welt der Kuckucksuhren! Mit unserem Kuckucksuhren-Planer kannst<br>
             Du selbst zum Schreiner werden und deine Kuckucksuhr nach deinen eigenen Vorstellung anpassen.
         </p>
-        <div class="configuration-teaser">
+
+        <div class="configuration-teaser" ng-class="{ 'init-animate': ctrl.startAnimation.teaserBoxes === false }">
             <div class="teaser-item">
                 <div class="teaser-box">
                     <i class="fa fa-cube"></i>
@@ -39,9 +69,9 @@
                 <div class="teaser-desc">Extras</div>
             </div>
         </div>
-        <div class="configuration-start">
+        <div class="configuration-start" ng-class="{ 'init-animate': ctrl.startAnimation.teaserBoxes === false }">
             <button type="button" class="button">
-                <i class="fa fa-angle-right"></i> Ich möchte meine jetzt zum Planer <i class="fa fa-angle-left"></i>
+                <i class="fa fa-angle-right"></i> Ich möchte jetzt zum Planer <i class="fa fa-angle-left"></i>
             </button>
         </div>
 
@@ -95,36 +125,6 @@
                 </div>
             </div>
         </div><!-- / Footer -->
-    </div><!-- / Section 1 -->
-
-    <!-- Section 2 -->
-    <div id="product-section" class="section">
-        <h1>Entdecke die Welt der Kuckucksuhren</h1>
-
-        <div class="product-slider">
-            <ul>
-                <li class="product-image" ng-repeat="slide in ctrl.slidesArray" style="left: {{$index * 410}}px" ng-style="ctrl.sliderTranslate({{ $index }})">
-                    <img ng-src="images/watches/classic/{{ slide.name }}">
-                    <div class="product-config">
-                        <p class="price section-box">{{ slide.price }}€</p>
-                        <p class="config section-box">Jetzt nach deinen Wünschen anpassen</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="product-slider-control">
-            <input type="range" min="0" max="5" value="0" step="1" list="volsettings" ng-model="ctrl.sliderPos.index" ng-change="ctrl.sliderChange()">
-            <datalist id="volsettings">
-                <option ng-repeat="slide in ctrl.slidesArray">{{ $index }}</option>
-            </datalist>
-        </div>
-        <div class="product-slider-current">{{ ctrl.sliderIndex() }}</div>
-    </div><!-- / Section 2 -->
-
-    <!-- Section 3 -->
-    <div class="section">
-        
-
     </div><!-- / Section 3 -->
 
 </div>

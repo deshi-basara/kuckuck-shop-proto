@@ -20,6 +20,9 @@
             width: 60%;
             left: 21%;
             overflow: hidden;
+            opacity: 1;
+
+            @include transition(opacity 0.7s ease-in-out);
 
             ul {
                 position: relative;
@@ -31,11 +34,12 @@
                     position: absolute;
                     float: left;
                     width: 280px;
+                    opacity: 1;
 
                     @include transform(translate3d(0, 0, 0));
                     //-webkit-transform: scale(1) !important;
 
-                    @include transition(transform 0.7s ease-in-out);
+                    @include transition(transform 0.7s ease-in-out, opacity 0.7s ease-in-out);
 
                     img {
                         margin-top: 20px;
@@ -90,6 +94,9 @@
 
             }
         }
+        .product-slider.init-animate {
+            opacity: 0;
+        }
 
         .product-slider-control {
 
@@ -140,6 +147,10 @@
             .teaser-item {
                 display: inline-block;
                 width: 150px;
+                opacity: 1;
+
+                @include transform(translate3d(0,0,0));
+                @include transition(transform 1.2s ease-in-out, opacity 0.7s ease-in-out);
 
                 .teaser-box {
                     height: 80px;
@@ -163,8 +174,33 @@
             }
         }
 
+        .configuration-teaser.init-animate {
+            .teaser-item:nth-child(1) {
+                opacity: 0;
+                @include transform(translate3d(310px,0,0));
+            }
+            .teaser-item:nth-child(2) {
+                opacity: 0;
+                @include transform(translate3d(160px,0,0));
+            }
+            .teaser-item:nth-child(3) {
+                opacity: 0;
+            }
+            .teaser-item:nth-child(4) {
+                opacity: 0;
+                @include transform(translate3d(-160px,0,0));
+            }
+            .teaser-item:nth-child(5) {
+                opacity: 0;
+                @include transform(translate3d(-310px,0,0));
+            }
+        }
+
         .configuration-start {
             margin-bottom: 250px;
+
+            @include transform(scale(1));
+            @include transition(transform 0.7s ease-in-out 1.2s, opacity 0.7s ease-in-out 1.2s);
 
             button {
                 background-color: $kuck-blue;
@@ -173,6 +209,11 @@
 
                 font-size: em(38);
             }
+        }
+
+        .configuration-start.init-animate {
+            opacity: 0;
+            @include transform(scale(0.7));
         }
     }
 }

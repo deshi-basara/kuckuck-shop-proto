@@ -6,12 +6,12 @@
         .module('app')
         .controller('LandingCtrl', LandingCtrl);
 
-    LandingCtrl.$inject = [];
+    LandingCtrl.$inject = ['$scope'];
 
     /**
      * Handles the landing view and all interactions
      */
-    function LandingCtrl() {
+    function LandingCtrl($scope) {
         var ctrl = this;
 
         /**
@@ -22,7 +22,7 @@
                 menu: null,
                 direction: 'vertical',
                 verticalCentered: true,
-                sectionsColor: ['#7BAABE', '#f2f2f2', '#4BBFC3', 'whitesmoke', '#000'],
+                sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
                 anchors: [],
                 scrollingSpeed: 700,
                 easing: 'swing',
@@ -45,11 +45,32 @@
                 //events
                 onLeave: function(index, nextIndex, direction){console.log('leave');},
                 afterLoad: function(anchorLink, index){
-
+                    checkPillingAnimation(index);
                 },
                 afterRender: function(){console.log('render');},
             });
         });
+
+        /**
+         * Starts a specified animation, when a certan pagepile enters the viewport
+         * @param  {int}    index [Current pagepile]
+         */
+        function checkPillingAnimation(index) {
+            console.log(index);
+
+            // Section 2 aninmation
+            if(index === 2 && !ctrl.startAnimation.productSlider) {
+                $scope.$apply(function() {
+                    ctrl.startAnimation.productSlider = true;
+                });
+            }
+            // Section 3 aninmation
+            else if(index === 3 && !ctrl.startAnimation.teaserBoxes) {
+                $scope.$apply(function() {
+                    ctrl.startAnimation.teaserBoxes = true;
+                });
+            }
+        }
 
         /**
          * Holdes the current sliderIndex and computes it with the length of the
@@ -73,10 +94,12 @@
 
         angular.extend(ctrl, {
             sliderPos: {index: 0},
-            //sliderTranslate: {'-webkit-transform': 'translate3d(0px, 0px, 0px'},
             slidesArray: [{name: 'blau.png', price: 100}, {name: 'gelb.png', price: 100}, {name: 'rosa.png', price: 100},{name: 'blau.png', price: 100}, {name: 'gelb.png', price: 100}, {name: 'rosa.png', price: 100}],
+            startAnimation: {
+                teaserBoxes: false,
+                productSlider: false
+            },
 
-            sliderChange: sliderChange,
             sliderIndex: sliderIndex,
             sliderTranslate: sliderTranslate
         });
