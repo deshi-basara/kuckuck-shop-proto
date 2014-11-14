@@ -22,7 +22,7 @@
                 menu: null,
                 direction: 'vertical',
                 verticalCentered: true,
-                sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+                sectionsColor: ['#7BAABE', '#f2f2f2', '#4BBFC3', 'whitesmoke', '#000'],
                 anchors: [],
                 scrollingSpeed: 700,
                 easing: 'swing',
@@ -43,9 +43,11 @@
                 animateAnchor: false,
 
                 //events
-                onLeave: function(index, nextIndex, direction){},
-                afterLoad: function(anchorLink, index){},
-                afterRender: function(){},
+                onLeave: function(index, nextIndex, direction){console.log('leave');},
+                afterLoad: function(anchorLink, index){
+
+                },
+                afterRender: function(){console.log('render');},
             });
         });
 
@@ -59,12 +61,10 @@
         }
 
         /**
-         * Changes the product slider's position accordingly to its slider position.
+         * Calculates the slider slidingTransition which is returned to the ngStyles of all '.product-image'
+         * @param  {int}     index [ngRepeat-$index of the current '.product-image'-div]
+         * @return {String}        [New translate3d-position of the '.product-image' in our slider]
          */
-        function sliderChange() {
-
-        }
-
         function sliderTranslate(index) {
             return {'-webkit-transform': 'translate3d('+ parseInt(ctrl.sliderPos.index) * -410  +'px,0,0)'};
         }

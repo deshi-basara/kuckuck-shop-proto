@@ -124,4 +124,55 @@
             color: $kuck-white;
         }
     }
+
+    #configurator-section {
+        color: $kuck-white;
+
+        p {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        .configuration-teaser {
+            margin-top: 100px;
+            margin-bottom: 100px;
+
+            .teaser-item {
+                display: inline-block;
+                width: 150px;
+
+                .teaser-box {
+                    height: 80px;
+                    width: 80px;
+                    margin-left: 35px;
+                    padding: 20px;
+                    border: 1px solid $kuck-white;
+                    box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, 0.26);
+
+                    i {
+                        font-size: 40px;
+                    }
+                }
+
+                .teaser-desc {
+                    margin-top: 10px;
+                    text-align: center;
+                    font-size: em(18);
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .configuration-start {
+            margin-bottom: 250px;
+
+            button {
+                background-color: $kuck-blue;
+                color: $kuck-white;
+                border: 1px solid $kuck-white;
+
+                font-size: em(38);
+            }
+        }
+    }
 }
