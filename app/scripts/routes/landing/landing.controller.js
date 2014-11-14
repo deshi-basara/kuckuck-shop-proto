@@ -47,7 +47,10 @@
                 afterLoad: function(anchorLink, index){
                     checkPillingAnimation(index);
                 },
-                afterRender: function(){console.log('render');},
+                afterRender: function(){
+                    // start the video
+                    $('#video-section video').get(0).play();
+                },
             });
         });
 
