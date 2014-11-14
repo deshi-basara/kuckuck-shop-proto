@@ -6,12 +6,12 @@
         .module('app')
         .controller('LandingCtrl', LandingCtrl);
 
-    LandingCtrl.$inject = ['$scope', '$rootScope'];
+    LandingCtrl.$inject = ['$scope', '$rootScope', '$timeout'];
 
     /**
      * Handles the landing view and all interactions
      */
-    function LandingCtrl($scope, $rootScope) {
+    function LandingCtrl($scope, $rootScope, $timeout) {
         var ctrl = this;
 
         /**
@@ -49,10 +49,14 @@
                 },
                 afterRender: function(){
 
-                    $rootScope.$broadcast('loader.hide');
+                    // hide the loader
+                    $timeout(function() {
+                        $rootScope.$broadcast('loader.hide');
+                        
+                        // start the video
+                        $('#video-section video').get(0).play();
 
-                    // start the video
-                    $('#video-section video').get(0).play();
+                    }, 500);
                 },
             });
         });

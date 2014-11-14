@@ -190,6 +190,10 @@ label {
   height: 70px;
   padding-top: 13px;
 }
+#navigation .container-fluid .navbar-header {
+  margin-left: 15px;
+  margin-top: -7px;
+}
 #navigation .container-fluid .collapse {
   padding-left: 75px;
   padding-right: 75px;
