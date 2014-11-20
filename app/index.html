@@ -55,20 +55,20 @@
                 <!-- Nav bar -->
                 <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
                     <ul class="nav navbar-nav">
-                        <li>
-                            <a href="">Formen</a>
+                        <li ng-class="{ 'enabled': main.isActive('/planer#1') }">
+                            <a href="#/planer#1">Gehäuse</a>
                         </li>
-                        <li>
-                            <a href="">Material</a>
+                        <li ng-class="{ 'enabled': main.isActive('/planer#2') }">
+                            <a href="#/planer#2">Material</a>
                         </li>
-                        <li>
-                            <a href="">Ausstattung</a>
+                        <li ng-class="{ 'enabled': main.isActive('/planer#3') }">
+                            <a href="#/planer#3">Ausstattung</a>
                         </li>
-                        <li>
-                            <a href="">Farben</a>
+                        <li ng-class="{ 'enabled': main.isActive('/planer#4') }">
+                            <a href="#/planer#4">Farben</a>
                         </li>
-                        <li>
-                            <a href="">Extras</a>
+                        <li ng-class="{ 'enabled': main.isActive('/planer#5') }">
+                            <a href="#/planer#5">Extras</a>
                         </li>
                     </ul>
 
@@ -95,12 +95,12 @@
         <!--
             The ui-view directive tells $state where to place the templates
         -->
-        <div ui-view class="main-container" ng-class="{ 'slide-left': main.bagOpen }"></div>
+        <div ui-view class="main-container" ng-class="{ 'slide-left': main.bagOpen }" ng-cloak></div>
 
         <!--
             Shopping Bag
         -->
-        <div id="shopping-bag">
+        <div id="shopping-bag" ng-cloak>
             <div class="shopping-content">Shopping</div>
         </div>
 
@@ -142,6 +142,7 @@
         <script src="scripts/directives/progress/progress.directive.js"></script>
         <script src="scripts/routes/landing/landing.controller.js"></script>
         <script src="scripts/routes/main/main.controller.js"></script>
+        <script src="scripts/routes/planner/planner.controller.js"></script>
         <script src="scripts/services/auth/auth.service.js"></script>
         <!-- endinject -->
         <!-- endbuild -->
