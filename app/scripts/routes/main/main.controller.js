@@ -15,6 +15,17 @@
         var main = this;
 
         /**
+         * Starts the checkout process after validation
+         */
+        function checkoutBag() {
+            // validate
+            if(!main.bagItems) {
+                return main.showFeedback = true;
+            }
+
+        }
+
+        /**
          * Checks if the navigation link is active
          * @param  {string}  url [Url of the navigation link]
          * @return {Boolean}     [description]
@@ -64,9 +75,14 @@
         //////////////////////
 
         angular.extend(main, {
-            bagOpen: true,
+            bagOpen: false,
             isLoading: true,
+            showFeedback: false,
+            priceTotal: 0,
 
+            bagItems: null,
+
+            checkoutBag: checkoutBag,
             isActive: isActive,
             toggleBag: toggleBag
         });
