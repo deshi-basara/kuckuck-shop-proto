@@ -13,6 +13,7 @@
     .shopping-content {
         color: $kuck-white;
         padding: 25px;
+        height: 100%;
 
         .shopping-header {
             margin-top: 5px;
@@ -26,6 +27,11 @@
             top: 39%;
             text-align: center;
             font-size: em(20);
+
+            .fa-heart:before {
+                animation: heart 2s ease-in-out 1s infinite;
+            }
+
 
             .empty {
                 margin-top: 20px;
@@ -41,55 +47,75 @@
             }
         }
 
-        .shopping-item-list {
+        .shopping-empty.feedback {
+            .fa-heart {
+                color: $kuck-bluer;
 
-            .item-left {
-                @include span-columns(10 of 12);
-
-                img {
-                    float: left;
-                    width: 30%;
-                    height: auto;
-                }
-
-                .item-desc {
-                    float: right;
-                    width: 69%;
-                    padding-left: 30px;
-
-                    h6 {
-                        font-weight: bold;
-                        padding-bottom: 10px;
-                    }
-
-                    .desc {
-                        font-size: em(13);
-                    }
-                }
+                @include transition(all 0.7s ease-in-out);
             }
 
-            .item-right {
-                @include span-columns(2 of 12);
-                text-align: right;
+            .empty span {
+                color: $kuck-bluer;
 
-                .item-controls {
-                    margin-top: 5px;
+                @include transition(all 0.7s ease-in-out);
+            }
+        }
 
-                    i {
-                        padding: 5px;
+        .shopping-item-list {
+            height: 76%;
+
+            .shopping-item {
+                margin-top: 10px;
+
+                .item-left {
+                    @include span-columns(10 of 12);
+
+                    img {
+                        float: left;
+                        width: 30%;
+                        height: auto;
+                    }
+
+                    .item-desc {
+                        float: right;
+                        width: 69%;
+                        padding-left: 30px;
+
+                        h6 {
+                            font-weight: bold;
+                            padding-bottom: 10px;
+                        }
+
+                        .desc {
+                            font-size: em(13);
+                        }
                     }
                 }
 
-                .item-price {
-                    margin-top: 70px;
-                    font-size: em(14);
+                .item-right {
+                    @include span-columns(2 of 12);
+                    text-align: right;
+
+                    .item-controls {
+                        margin-top: 5px;
+
+                        i {
+                            padding: 5px;
+                        }
+                    }
+
+                    .item-price {
+                        margin-top: 70px;
+                        font-size: em(14);
+                    }
                 }
+
             }
         }
 
         .shopping-footer {
             position: absolute;
-            width: 85%;
+            width: 250px;
             bottom: 90px;
             border-top: 1px solid $kuck-white;
 
@@ -114,5 +140,17 @@
                 width: 100%;
             }
         }
+    }
+}
+
+@keyframes heart {
+    0% {
+        @include transform(scale(1));
+    }
+    50% {
+        @include transform(scale(1.2));
+    }
+    100% {
+        @include transform(scale(1));
     }
 }

@@ -88,7 +88,7 @@
             Custom loader directive
         -->
         <!--<ags-loaders></ags-loaders>-->
-        <div class="ags-loader" ng-class="{ 'loading': main.isLoading }" ng-show="main.isLoading">
+        <div class="ags-loader" ng-class="{ 'loading': main.isLoading }" ng-show="main.isLoading" ng-cloak>
             <img ng-src="images/preloaders/Preloader_2/Preloader_2.gif">
         </div>
 
@@ -103,13 +103,13 @@
         <div id="shopping-bag" ng-cloak>
             <div class="shopping-content">
                 <div class="shopping-header">Dein Einkaufswaagen</div>
-                <div class="shopping-empty" ng-hide="true">
+                <div class="shopping-empty" ng-class="{ 'feedback': main.showFeedback }" ng-show="!main.bagItems">
                     <i class="fa fa-heart fa-3x"></i>
                     <div class="empty">Dein Waagen ist <span>leer</span>.</div>
                     <div class="empty-subline">Zeige uns deine kreativste Kuckucksuhr!</div>
                 </div>
                 <div class="shopping-item-list">
-                    <div class="shopping-item">
+                    <div class="shopping-item" ng-hide="!main.bagItems">
                         <div class="item-left">
                             <img src="images/watches/classic/gruen.png">
                             <div class="item-desc">
@@ -125,14 +125,14 @@
                                 <i class="fa fa-times-circle"></i><br>
                                 <i class="fa fa-wrench"></i>
                             </div>
-                            <div class="item-price">280€</div>
+                            <div class="item-price">280 €</div>
                         </div>
                     </div>
                 </div>
                 <div class="shopping-footer">
                     <div class="shopping-price-label">Total:</div>
-                    <div class="shopping-price">280€</div>
-                    <button type="button" class="button">Checkout</button>
+                    <div class="shopping-price">{{ main.priceTotal }} €</div>
+                    <button type="button" class="button" ng-click="main.checkoutBag()">Checkout</button>
                 </div>
             </div>
         </div>
