@@ -1,0 +1,214 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+         <!--
+            Fonts
+        -->
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Josefin+Slab:400,600,700' rel='stylesheet' type='text/css'>
+
+        <!--
+            Vendor stylesheets
+        -->
+        <!-- build:css styles/vendor.min.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.css" />
+        <link rel="stylesheet" href="../bower_components/normalize.css/normalize.css" />
+        <link rel="stylesheet" href="../bower_components/ng-table/ng-table.css" />
+        <link rel="stylesheet" href="../bower_components/sweetalert/lib/sweet-alert.css" />
+        <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+        <link rel="stylesheet" href="../bower_components/pagepiling.js/jquery.pagepiling.css" />
+        <link rel="stylesheet" href="../bower_components/angular-loading-bar/build/loading-bar.css" />
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!--
+            Custom stylesheets
+        -->
+        <!-- build:css({.tmp,app}) styles/main.min.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="styles/main2.css">
+         <!-- endbuild -->
+
+        <script src="../bower_components/modernizr/modernizr.js"></script>
+    </head>
+    <body ng-app="app" ng-controller="MainCtrl as main"><script type='text/javascript' id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.1.6.5.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
+//]]></script>
+
+        <!--
+            Navigation
+        -->
+        <nav id="navigation" class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+
+                <!-- Logo -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <i class="fa fa-tree fa-2x"></i>
+                    </a>
+                </div>
+
+                <!-- Nav bar -->
+                <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+                    <ul class="nav navbar-nav">
+                        <li>
+                            <a href="">Formen</a>
+                        </li>
+                        <li>
+                            <a href="">Material</a>
+                        </li>
+                        <li>
+                            <a href="">Ausstattung</a>
+                        </li>
+                        <li>
+                            <a href="">Farben</a>
+                        </li>
+                        <li>
+                            <a href="">Extras</a>
+                        </li>
+                    </ul>
+
+                    <!-- Nav right -->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="">Einloggen</a></li>
+                        <li ng-click="main.toggleBag()">
+                            <a href=""><i class="glyphicon glyphicon-shopping-cart"></i></a>
+                        </li>
+                    </ul><!-- / Nav right -->
+                </nav><!-- / Nav bar -->
+
+            </div>
+        </nav>
+
+        <!--
+            Custom loader directive
+        -->
+        <div ags-loaders></div>
+
+	
+       <div class="konfigurator">
+           <div class="container">
+		       <div class="row">
+				   <div class="vorschau col-md-5">
+                        <img ng-src="images/watches/classic/blau.png" src="images/watches/classic/blau.png" height="60%" class="center-block">
+				   </div>
+
+				   <div class="col-md-1"></div>
+
+				   <div class="einstellungen col-md-6">
+					  
+							<div class="auswahlfenster2">
+								<img src="images/shape/f1.png" class="auswahl">
+								<img src="images/shape/f2.png" class="auswahl">
+                                <img src="images/shape/f3.png" class="auswahl">
+                                <img src="images/shape/f4.png" class="auswahl">
+                                <img src="images/shape/f5.png" class="auswahl">
+                                <img src="images/shape/f6.png" class="auswahl">
+                                <img src="images/shape/f7.png" class="auswahl">
+                                <img src="images/shape/f1.png" class="auswahl">
+                                <img src="images/shape/f2.png" class="auswahl">
+                                <img src="images/shape/f3.png" class="auswahl">
+                                <img src="images/shape/f4.png" class="auswahl">
+                                <img src="images/shape/f5.png" class="auswahl">
+
+                               
+							</div>
+
+							<hr>
+
+							<div class="color">
+						  		<img src="images/colors/rot.gif" class="color img-circle">
+						  		<img src="images/colors/blau.gif" class="color img-circle">
+                                <img src="images/colors/hellblau.gif" class="color img-circle">
+                                <img src="images/colors/gruen.gif" class="color img-circle">
+                                <img src="images/colors/gelb.gif" class="color img-circle">
+                                <img src="images/colors/orange.gif" class="color img-circle">
+                                <img src="images/colors/pink.gif" class="color img-circle">
+                                <img src="images/colors/schwarz.gif" class="color img-circle">
+						    </div>
+				   </div>
+			   </div>
+       </div>
+
+
+		<div class="row uhrenvorlage">
+        <h1 class="text-center" id="slider" style="color:#f2f2f2">Eine Auswahl unserer schönsten Modelle</h1>
+		            <div class="col-md-3 portfolio-item">
+		                <a href="#">
+		                     <img ng-src="images/watches/classic/gelb.png" src="images/watches/classic/gelb.png" height="50%"class="center-block" >
+		                </a>
+		            </div>
+		            <div class="col-md-3 portfolio-item">
+		                <a href="#">
+		                    <img ng-src="images/watches/classic/rosa.png" src="images/watches/classic/rosa.png" height="50%"class="center-block" >
+		                </a>
+		            </div>
+		            <div class="col-md-3 portfolio-item">
+		                <a href="#">
+		                    <img ng-src="images/watches/classic/gruen.png" src="images/watches/classic/gruen.png" height="50%"class="center-block" >
+		                </a>
+		            </div>
+		            <div class="col-md-3 portfolio-item">
+		                <a href="#">
+		                    <img ng-src="images/watches/classic/orange.png" src="images/watches/classic/orange.png" height="50%"class="center-block" >
+		                </a>
+		            </div>
+		        </div>
+
+        <!--
+            Shopping Bag
+        -->
+        <div id="shopping-bag">
+            <div class="shopping-content">Shopping</div>
+        </div>
+
+        <!--
+            Footer
+        -->
+        <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+
+        <!--
+            Vendor scripts
+        -->
+        <!-- build:js scripts/vendor.min.js -->
+        <!-- bower:js -->
+        <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/angular/angular.js"></script>
+        <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="../bower_components/traceur/traceur.js"></script>
+        <script src="../bower_components/es6-module-loader/dist/es6-module-loader-sans-promises.js"></script>
+        <script src="../bower_components/system.js/dist/system.js"></script>
+        <script src="../bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+        <script src="../bower_components/angular-animate/angular-animate.js"></script>
+        <script src="../bower_components/ng-table/ng-table.js"></script>
+        <script src="../bower_components/sweetalert/lib/sweet-alert.js"></script>
+        <script src="../bower_components/angular-sweetalert/SweetAlert.js"></script>
+        <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="../bower_components/pagepiling.js/jquery.pagepiling.min.js"></script>
+        <script src="../bower_components/angular-loading-bar/build/loading-bar.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!--
+            Custom angular scripts
+        -->
+        <!-- build:js scripts/main.min.js -->
+        <!-- inject:js -->
+        <script src="scripts/app.js"></script>
+        <script src="scripts/directives/loader.js"></script>
+        <script src="scripts/filters/agsBytes.filter.js"></script>
+        <script src="scripts/directives/progress/progress.directive.js"></script>
+        <script src="scripts/routes/landing/landing.controller.js"></script>
+        <script src="scripts/routes/main/main.controller.js"></script>
+        <script src="scripts/services/auth/auth.service.js"></script>
+        <!-- endinject -->
+        <!-- endbuild -->
+
+    </body>
+</html>
