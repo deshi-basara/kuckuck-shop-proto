@@ -48,6 +48,11 @@
                     // get the startIndex on the first load
                     var startIndex = parseInt($location.hash());
 
+                    // fallback, if nothing was set
+                    if(!startIndex) {
+                        startIndex = 1;
+                    }
+
                     // broadcast index
                     $rootScope.$broadcast('nav.change', startIndex);
 

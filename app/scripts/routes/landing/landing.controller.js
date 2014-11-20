@@ -6,12 +6,12 @@
         .module('app')
         .controller('LandingCtrl', LandingCtrl);
 
-    LandingCtrl.$inject = ['$scope', '$rootScope', '$timeout'];
+    LandingCtrl.$inject = ['$scope', '$rootScope', '$timeout', '$state'];
 
     /**
      * Handles the landing view and all interactions
      */
-    function LandingCtrl($scope, $rootScope, $timeout) {
+    function LandingCtrl($scope, $rootScope, $timeout, $state) {
         var ctrl = this;
 
         /**
@@ -29,12 +29,12 @@
                 loopBottom: false,
                 loopTop: false,
                 css3: true,
-                navigation: {
+                navigation: false/*{
                     'textColor': '#FFA600',
                     'bulletsColor': '#f2f2f2',
                     'position': 'left',
                     'tooltips': ['Start', 'Fertige Produkte', 'Zum Konfigurator']
-                },
+                }*/,
                 normalScrollElements: null,
                 normalScrollElementTouchThreshold: 5,
                 touchSensitivity: 5,
@@ -43,7 +43,7 @@
                 animateAnchor: false,
 
                 //events
-                onLeave: function(index, nextIndex, direction){console.log('leave');},
+                onLeave: function(index, nextIndex, direction) {},
                 afterLoad: function(anchorLink, index){
                     checkPillingAnimation(index);
                 },
@@ -52,7 +52,7 @@
                     // hide the loader
                     $timeout(function() {
                         $rootScope.$broadcast('loader.hide');
-                        
+
                         // start the video
                         $('#video-section video').get(0).play();
 
@@ -66,8 +66,6 @@
          * @param  {int}    index [Current pagepile]
          */
         function checkPillingAnimation(index) {
-            console.log(index);
-
             // Section 2 aninmation
             if(index === 2 && !ctrl.startAnimation.productSlider) {
                 $scope.$apply(function() {
@@ -100,6 +98,13 @@
             return {'-webkit-transform': 'translate3d('+ parseInt(ctrl.sliderPos.index) * -410  +'px,0,0)'};
         }
 
+        /**
+         * Redirects the user to the planner-state
+         */
+        function startPlanning() {
+            $state.go('planner');
+        }
+
         //////////////////////
 
         angular.extend(ctrl, {
@@ -111,7 +116,9 @@
             },
 
             sliderIndex: sliderIndex,
-            sliderTranslate: sliderTranslate
+            sliderTranslate: sliderTranslate,
+
+            startPlanning: startPlanning
         });
     }
 

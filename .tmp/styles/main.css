@@ -234,10 +234,10 @@ label {
   -webkit-transition: border-bottom 0.2s ease-in-out;
   transition: border-bottom 0.2s ease-in-out;
 }
-#navigation .container-fluid .collapse ul li.finished {
+#navigation .container-fluid .collapse ul li.complete {
   background-color: #4BBFC3;
 }
-#navigation .container-fluid .collapse ul li.finished a {
+#navigation .container-fluid .collapse ul li.complete a {
   color: #f2f2f2;
 }
 
