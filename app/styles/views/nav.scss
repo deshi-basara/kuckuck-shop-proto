@@ -1,16 +1,62 @@
 #navigation {
     .container-fluid {
         height: 70px;
-        padding-top: 13px;
 
         .navbar-header {
-            margin-left: 15px;
-            margin-top: -7px;
+            height: 71px;
+
+            i {
+                margin-top: -15px;
+                padding: 18px 35px 18px 35px;
+                margin-left: -15px;
+                margin-right: -15px;
+
+                @include transition(all 0.7s ease-in-out);
+            }
+
+            i:hover {
+                background-color: $kuck-bluer;
+                color: $kuck-white;
+
+                @include transition(all 0.7s ease-in-out);
+            }
         }
 
         .collapse {
             padding-left: 75px;
             padding-right: 75px;
+            height: 70px !important;
+
+            ul {
+                height: 100%;
+
+                li {
+                    height: 72px;
+                    border-bottom: 0;
+
+                    @include transition(border-bottom 0.2s ease-in-out);
+
+                    a {
+                        line-height: 45px;
+
+                        @include transition(all 0.2s ease-in);
+                    }
+                }
+
+                li:hover, li.enabled {
+                    border-bottom: 5px solid $kuck-bluer;
+
+                    @include transition(border-bottom 0.2s ease-in-out);
+                }
+
+                li.finished {
+                    background-color: $kuck-bluer;
+
+                    a {
+                        color: $kuck-white;
+                    }
+                }
+            }
         }
     }
 }
