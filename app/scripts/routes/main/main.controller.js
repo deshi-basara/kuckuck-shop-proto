@@ -56,7 +56,6 @@
          * Listens for requests to see the loader.
          */
         $scope.$on('loader.show', function() {
-            console.log('show');
             $scope.$apply(function() {
                 main.isLoading = true;
             });
@@ -66,7 +65,6 @@
          * Listens for requests to hide the loader.
          */
         $scope.$on('loader.hide', function() {
-            console.log('hide');
             $scope.$apply(function() {
                 main.isLoading = false;
             });
@@ -81,6 +79,13 @@
             priceTotal: 0,
 
             bagItems: null,
+            complete: {
+                gehaeuse: true,
+                material: false,
+                ausstattung: false,
+                farben: false,
+                extras: false
+            },
 
             checkoutBag: checkoutBag,
             isActive: isActive,

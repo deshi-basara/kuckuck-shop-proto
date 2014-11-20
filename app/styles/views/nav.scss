@@ -49,7 +49,7 @@
                     @include transition(border-bottom 0.2s ease-in-out);
                 }
 
-                li.finished {
+                li.complete {
                     background-color: $kuck-bluer;
 
                     a {
