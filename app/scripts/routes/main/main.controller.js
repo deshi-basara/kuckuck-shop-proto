@@ -20,8 +20,7 @@
          * @return {Boolean}     [description]
          */
         function isActive(url) {
-            console.log(url + ' === ' + $location.url());
-            return url === $location.url();
+            return url == $location.hash();
         }
 
         /**
@@ -32,7 +31,18 @@
         }
 
         /**
-         * Listens for requests to see the loader
+         * Listen for navigation changes.
+         * @param  {object} broadEvent [Angular broadcast object]
+         * @param  {int}    index      [Current slider index]
+         */
+        $scope.$on('nav.change', function(broadEvent, index) {
+            $scope.$apply(function() {
+                main.enabled = index;
+            });
+        });
+
+        /**
+         * Listens for requests to see the loader.
          */
         $scope.$on('loader.show', function() {
             console.log('show');
@@ -42,7 +52,7 @@
         });
 
         /**
-         * Listens for requests to hide the loader
+         * Listens for requests to hide the loader.
          */
         $scope.$on('loader.hide', function() {
             console.log('hide');
@@ -54,7 +64,7 @@
         //////////////////////
 
         angular.extend(main, {
-            bagOpen: false,
+            bagOpen: true,
             isLoading: true,
 
             isActive: isActive,

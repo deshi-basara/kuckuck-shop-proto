@@ -39,7 +39,7 @@
 
                 //events
                 onLeave: function(index, nextIndex, direction) {
-
+                    $rootScope.$broadcast('nav.change', nextIndex);
                 },
                 afterLoad: function(anchorLink, index) {
 
@@ -47,6 +47,9 @@
                 afterRender: function() {
                     // get the startIndex on the first load
                     var startIndex = parseInt($location.hash());
+
+                    // broadcast index
+                    $rootScope.$broadcast('nav.change', startIndex);
 
                     // go to the wished index
                     $.fn.pagepiling.moveTo(startIndex);
