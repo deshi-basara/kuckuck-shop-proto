@@ -36,6 +36,10 @@ footer {
   background-color: white;
 }
 
+[ng-cloak] {
+  display: none !important;
+}
+
 /**
  * Input buttons
  *
@@ -288,6 +292,9 @@ label {
   margin-top: -60px;
   text-align: center;
 }
+#landing #video-section {
+  overflow: hidden;
+}
 #landing #video-section video {
   position: absolute;
   z-index: 4;
@@ -495,6 +502,7 @@ label {
 #shopping-bag .shopping-content {
   color: #f2f2f2;
   padding: 25px;
+  height: 100%;
 }
 #shopping-bag .shopping-content .shopping-header {
   margin-top: 5px;
@@ -508,6 +516,10 @@ label {
   text-align: center;
   font-size: 1.25em;
 }
+#shopping-bag .shopping-content .shopping-empty .fa-heart:before {
+  -webkit-animation: heart 2s ease-in-out 1s infinite;
+          animation: heart 2s ease-in-out 1s infinite;
+}
 #shopping-bag .shopping-content .shopping-empty .empty {
   margin-top: 20px;
 }
@@ -518,55 +530,71 @@ label {
   margin-top: 5px;
   font-size: 14px;
 }
-#shopping-bag .shopping-content .shopping-item-list .item-left {
+#shopping-bag .shopping-content .shopping-empty.feedback .fa-heart {
+  color: #4BBFC3;
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+#shopping-bag .shopping-content .shopping-empty.feedback .empty span {
+  color: #4BBFC3;
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+#shopping-bag .shopping-content .shopping-item-list {
+  height: 76%;
+}
+#shopping-bag .shopping-content .shopping-item-list .shopping-item {
+  margin-top: 10px;
+}
+#shopping-bag .shopping-content .shopping-item-list .shopping-item .item-left {
   float: left;
   display: block;
   margin-right: 2.3576515979%;
   width: 82.9403914003%;
 }
-#shopping-bag .shopping-content .shopping-item-list .item-left:last-child {
+#shopping-bag .shopping-content .shopping-item-list .shopping-item .item-left:last-child {
   margin-right: 0;
 }
-#shopping-bag .shopping-content .shopping-item-list .item-left img {
+#shopping-bag .shopping-content .shopping-item-list .shopping-item .item-left img {
   float: left;
   width: 30%;
   height: auto;
 }
-#shopping-bag .shopping-content .shopping-item-list .item-left .item-desc {
+#shopping-bag .shopping-content .shopping-item-list .shopping-item .item-left .item-desc {
   float: right;
   width: 69%;
   padding-left: 30px;
 }
-#shopping-bag .shopping-content .shopping-item-list .item-left .item-desc h6 {
+#shopping-bag .shopping-content .shopping-item-list .shopping-item .item-left .item-desc h6 {
   font-weight: bold;
   padding-bottom: 10px;
 }
-#shopping-bag .shopping-content .shopping-item-list .item-left .item-desc .desc {
+#shopping-bag .shopping-content .shopping-item-list .shopping-item .item-left .item-desc .desc {
   font-size: 0.8125em;
 }
-#shopping-bag .shopping-content .shopping-item-list .item-right {
+#shopping-bag .shopping-content .shopping-item-list .shopping-item .item-right {
   float: left;
   display: block;
   margin-right: 2.3576515979%;
   width: 14.7019570017%;
   text-align: right;
 }
-#shopping-bag .shopping-content .shopping-item-list .item-right:last-child {
+#shopping-bag .shopping-content .shopping-item-list .shopping-item .item-right:last-child {
   margin-right: 0;
 }
-#shopping-bag .shopping-content .shopping-item-list .item-right .item-controls {
+#shopping-bag .shopping-content .shopping-item-list .shopping-item .item-right .item-controls {
   margin-top: 5px;
 }
-#shopping-bag .shopping-content .shopping-item-list .item-right .item-controls i {
+#shopping-bag .shopping-content .shopping-item-list .shopping-item .item-right .item-controls i {
   padding: 5px;
 }
-#shopping-bag .shopping-content .shopping-item-list .item-right .item-price {
+#shopping-bag .shopping-content .shopping-item-list .shopping-item .item-right .item-price {
   margin-top: 70px;
   font-size: 0.875em;
 }
 #shopping-bag .shopping-content .shopping-footer {
   position: absolute;
-  width: 85%;
+  width: 250px;
   bottom: 90px;
   border-top: 1px solid #f2f2f2;
 }
@@ -589,6 +617,35 @@ label {
   width: 100%;
 }
 
+@-webkit-keyframes heart {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes heart {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
 .konfigurator {
   margin-top: 100px;
 }
