@@ -2,12 +2,20 @@
 	margin-top: 100px;
 }
 
+.next{
+	margin-bottom: 30px;
+}
+
 .auswahlfenster{
 	margin: 15px -20px 17px 1px;
 }
 
 .auswahlfenster2{
 	margin: 0px -20px 17px 1px;
+}
+
+.material{
+	margin: 20px;
 }
 
 .auswahl{
