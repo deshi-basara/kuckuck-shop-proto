@@ -32,6 +32,13 @@ angular
       controllerAs: 'ctrl'
     })
 
+    .state('planner', {
+      url: '/planer',
+      templateUrl: 'scripts/routes/planner/planner.index.tpl.html',
+      controller: 'PlannerCtrl',
+      controllerAs: 'ctrl'
+    });
+
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/');
 
