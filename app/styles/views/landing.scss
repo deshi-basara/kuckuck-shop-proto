@@ -10,6 +10,30 @@
     #video-section {
         overflow: hidden;
 
+        h1 {
+            position: absolute;
+            width: 100%;
+            top: 14%;
+            color: $kuck-black;
+
+            z-index: 2;
+
+            span {
+                font-weight: bolder;
+                color: $kuck-bluer;
+            }
+
+            /*&:after {
+                content: '';
+                display: block;
+                margin: 1.75rem auto;
+                width: em(30);
+                height: 0px;
+                border-bottom: solid 1px $kuck-black;
+                text-align: center;
+            }*/
+        }
+
         video {
             position: absolute;
             z-index: 4;
@@ -23,6 +47,8 @@
             background-position: center center;
             background-size: contain;
             object-fit: cover;
+
+            z-index: 1;
         }
     }
 
