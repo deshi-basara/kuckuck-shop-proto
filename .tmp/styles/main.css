@@ -315,6 +315,78 @@ label {
   font-weight: bolder;
   color: #4bbfc3;
 }
+#landing #video-section .video-indicators {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  color: #333333;
+  z-index: 2;
+}
+#landing #video-section .video-indicators .indicator-item {
+  position: absolute;
+  width: 15%;
+}
+#landing #video-section .video-indicators .indicator-item .indicator-text {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 65.8807828007%;
+}
+#landing #video-section .video-indicators .indicator-item .indicator-text:last-child {
+  margin-right: 0;
+}
+#landing #video-section .video-indicators .indicator-item .indicator-text .indicator-number {
+  font-size: 3.75em;
+}
+#landing #video-section .video-indicators .indicator-item .indicator-text .indicator-subline {
+  margin-top: -10px;
+  line-height: 1.25em;
+}
+#landing #video-section .video-indicators .indicator-item .indicator-text .indicator-pointer {
+  position: relative;
+  top: -40px;
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 65.8807828007%;
+  border-top: 3px solid #7baabe;
+}
+#landing #video-section .video-indicators .indicator-item .indicator-text .indicator-pointer:last-child {
+  margin-right: 0;
+}
+#landing #video-section .video-indicators .indicator-item.cuckoo {
+  top: 33%;
+  left: 27%;
+}
+#landing #video-section .video-indicators .indicator-item.pointer {
+  top: 53%;
+  right: 20%;
+}
+#landing #video-section .video-indicators .indicator-item.pointer .indicator-pointer {
+  width: 250px;
+  left: -210px;
+}
+#landing #video-section .video-indicators .indicator-item.ind-shape {
+  top: 30%;
+  right: 23%;
+}
+#landing #video-section .video-indicators .indicator-item.ind-shape .indicator-pointer {
+  width: 100px;
+  right: 50px;
+}
+#landing #video-section .video-indicators .indicator-left .indicator-pointer {
+  left: 150px;
+}
+#landing #video-section .video-indicators .indicator-right .indicator-pointer {
+  right: 90px;
+}
+#landing #video-section .video-indicators .shape {
+  width: 100%;
+  height: 100%;
+}
+#landing #video-section .video-indicators .shape rect {
+  width: 440;
+}
 #landing #video-section video {
   position: absolute;
   z-index: 4;

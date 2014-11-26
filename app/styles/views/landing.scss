@@ -34,6 +34,87 @@
             }*/
         }
 
+        .video-indicators {
+            position: relative;
+            height: 100%;
+            width: 100%;
+            color: $kuck-black;
+
+            z-index: 2;
+
+            .indicator-item {
+                position: absolute;
+                width: 15%;
+
+                .indicator-text {
+                    @include span-columns(8 of 12);
+
+                    .indicator-number {
+                        font-size: em(60);
+                    }
+
+                    .indicator-subline {
+                        margin-top: -10px;
+                        line-height: em(20);
+                    }
+
+
+                    .indicator-pointer {
+                        position: relative;
+                        top: -40px;
+                        @include span-columns(8 of 12);
+                        border-top: 3px solid $kuck-blue;
+                    }
+                }
+
+                &.cuckoo {
+                    top: 33%;
+                    left: 27%;
+                }
+
+                &.pointer {
+                    top: 53%;
+                    right: 20%;
+
+                    .indicator-pointer {
+                        width: 250px;
+                        left: -210px;
+                    }
+                }
+
+                &.ind-shape {
+                    top: 30%;
+                    right: 23%;
+
+                    .indicator-pointer {
+                        width: 100px;
+                        right: 50px;
+                    }
+                }
+            }
+
+            .indicator-left {
+                .indicator-pointer {
+                    left: 150px;
+                }
+            }
+
+            .indicator-right {
+                .indicator-pointer {
+                    right: 90px;
+                }
+            }
+
+            .shape {
+                width: 100%;
+                height: 100%;
+
+                rect {
+                    width: 440;
+                }
+            }
+        }
+
         video {
             position: absolute;
             z-index: 4;

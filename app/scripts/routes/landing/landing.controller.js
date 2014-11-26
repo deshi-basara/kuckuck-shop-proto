@@ -66,8 +66,11 @@
          * @param  {int}    index [Current pagepile]
          */
         function checkPillingAnimation(index) {
+            if(index === 1 && !ctrl.startAnimation.teaserVideo) {
+
+            }
             // Section 2 aninmation
-            if(index === 2 && !ctrl.startAnimation.productSlider) {
+            else if(index === 2 && !ctrl.startAnimation.productSlider) {
                 $scope.$apply(function() {
                     ctrl.startAnimation.productSlider = true;
                 });
@@ -111,6 +114,7 @@
             sliderPos: {index: 0},
             slidesArray: [{name: 'blau.png', price: 100}, {name: 'gelb.png', price: 100}, {name: 'rosa.png', price: 100},{name: 'blau.png', price: 100}, {name: 'gelb.png', price: 100}, {name: 'rosa.png', price: 100}],
             startAnimation: {
+                teaserVideo: false,
                 teaserBoxes: false,
                 productSlider: false
             },
