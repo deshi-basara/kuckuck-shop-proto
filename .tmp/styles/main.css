@@ -128,12 +128,12 @@ label {
 .section-box .section-box-head {
   height: 2.5em;
   line-height: 2.5em;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #E6E6E6;
 }
 
 .price {
   font-weight: bold;
-  color: #ffa600 !important;
+  color: #FFA600 !important;
 }
 
 .animate-show {
@@ -205,7 +205,7 @@ label {
   transition: all 0.7s ease-in-out;
 }
 #navigation .container-fluid .navbar-header i:hover {
-  background-color: #4bbfc3;
+  background-color: #4BBFC3;
   color: #f2f2f2;
   -webkit-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
@@ -230,12 +230,12 @@ label {
   transition: all 0.2s ease-in;
 }
 #navigation .container-fluid .collapse ul li:hover, #navigation .container-fluid .collapse ul li.enabled {
-  border-bottom: 5px solid #4bbfc3;
+  border-bottom: 5px solid #4BBFC3;
   -webkit-transition: border-bottom 0.2s ease-in-out;
   transition: border-bottom 0.2s ease-in-out;
 }
 #navigation .container-fluid .collapse ul li.complete {
-  background-color: #4bbfc3;
+  background-color: #4BBFC3;
 }
 #navigation .container-fluid .collapse ul li.complete a {
   color: #f2f2f2;
@@ -248,7 +248,7 @@ label {
   height: 300px;
   padding-left: 100px;
   padding-right: 100px;
-  color: #333333;
+  color: #333;
 }
 #footer .footer-logo {
   position: relative;
@@ -299,7 +299,7 @@ label {
   position: absolute;
   width: 100%;
   top: 14%;
-  color: #333333;
+  color: #333;
   z-index: 2;
   /*&:after {
       content: '';
@@ -313,13 +313,13 @@ label {
 }
 #landing #video-section h1 span {
   font-weight: bolder;
-  color: #4bbfc3;
+  color: #4BBFC3;
 }
 #landing #video-section .video-indicators {
   position: relative;
   height: 100%;
   width: 100%;
-  color: #333333;
+  color: #333;
   z-index: 2;
 }
 #landing #video-section .video-indicators .indicator-item {
@@ -349,7 +349,7 @@ label {
   display: block;
   margin-right: 2.3576515979%;
   width: 65.8807828007%;
-  border-top: 3px solid #7baabe;
+  border-top: 3px solid #7BAABE;
 }
 #landing #video-section .video-indicators .indicator-item .indicator-text .indicator-pointer:last-child {
   margin-right: 0;
@@ -493,7 +493,7 @@ label {
   height: 16px;
   width: 16px;
   border-radius: 50%;
-  background: #ffa600;
+  background: #FFA600;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
   margin-top: -2px;
 }
@@ -571,7 +571,7 @@ label {
   transition: transform 0.7s ease-in-out 1.2s, opacity 0.7s ease-in-out 1.2s;
 }
 #landing #configurator-section .configuration-start button {
-  background-color: #7baabe;
+  background-color: #7BAABE;
   color: #f2f2f2;
   border: 1px solid #f2f2f2;
   font-size: 2.375em;
@@ -624,12 +624,12 @@ label {
   font-size: 14px;
 }
 #shopping-bag .shopping-content .shopping-empty.feedback .fa-heart {
-  color: #4bbfc3;
+  color: #4BBFC3;
   -webkit-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
 }
 #shopping-bag .shopping-content .shopping-empty.feedback .empty span {
-  color: #4bbfc3;
+  color: #4BBFC3;
   -webkit-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
 }
@@ -715,12 +715,10 @@ label {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
-
   50% {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
   }
-
   100% {
     -webkit-transform: scale(1);
     transform: scale(1);
@@ -732,17 +730,50 @@ label {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
-
   50% {
     -webkit-transform: scale(1.2);
     transform: scale(1.2);
   }
-
   100% {
     -webkit-transform: scale(1);
     transform: scale(1);
   }
 }
+#checkout {
+  width: 100%;
+  height: 100%;
+  background-color: #7BAABE;
+}
+#checkout .checkout-address {
+  color: #f2f2f2;
+  padding: 40px 105px 40px 105px;
+}
+#checkout .checkout-address h4 {
+  font-weight: bold;
+  margin-bottom: 35px;
+}
+#checkout .checkout-address label {
+  font-weight: normal;
+}
+#checkout .checkout-address .billing-address {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 48.821174201%;
+}
+#checkout .checkout-address .billing-address:last-child {
+  margin-right: 0;
+}
+#checkout .checkout-address .shipping-address {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 48.821174201%;
+}
+#checkout .checkout-address .shipping-address:last-child {
+  margin-right: 0;
+}
+
 .konfigurator {
   margin-top: 100px;
 }

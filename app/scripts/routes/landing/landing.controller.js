@@ -18,47 +18,51 @@
          * Initiate pagepilling when the dom is ready
          */
         angular.element(document).ready(function () {
-            $('#landing').pagepiling({
-                menu: null,
-                direction: 'vertical',
-                verticalCentered: true,
-                sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
-                anchors: [],
-                scrollingSpeed: 700,
-                easing: 'swing',
-                loopBottom: false,
-                loopTop: false,
-                css3: true,
-                navigation: false/*{
-                    'textColor': '#FFA600',
-                    'bulletsColor': '#f2f2f2',
-                    'position': 'left',
-                    'tooltips': ['Start', 'Fertige Produkte', 'Zum Konfigurator']
-                }*/,
-                normalScrollElements: null,
-                normalScrollElementTouchThreshold: 5,
-                touchSensitivity: 5,
-                keyboardScrolling: true,
-                sectionSelector: '.section',
-                animateAnchor: false,
+            setTimeout(function() {
 
-                //events
-                onLeave: function(index, nextIndex, direction) {},
-                afterLoad: function(anchorLink, index){
-                    checkPillingAnimation(index);
-                },
-                afterRender: function(){
+                $('#landing').pagepiling({
+                    menu: null,
+                    direction: 'vertical',
+                    verticalCentered: true,
+                    sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+                    anchors: [],
+                    scrollingSpeed: 700,
+                    easing: 'swing',
+                    loopBottom: false,
+                    loopTop: false,
+                    css3: true,
+                    navigation: false/*{
+                        'textColor': '#FFA600',
+                        'bulletsColor': '#f2f2f2',
+                        'position': 'left',
+                        'tooltips': ['Start', 'Fertige Produkte', 'Zum Konfigurator']
+                    }*/,
+                    normalScrollElements: null,
+                    normalScrollElementTouchThreshold: 5,
+                    touchSensitivity: 5,
+                    keyboardScrolling: true,
+                    sectionSelector: '.section',
+                    animateAnchor: false,
 
-                    // hide the loader
-                    $timeout(function() {
-                        $rootScope.$broadcast('loader.hide');
+                    //events
+                    onLeave: function(index, nextIndex, direction) {},
+                    afterLoad: function(anchorLink, index){
+                        checkPillingAnimation(index);
+                    },
+                    afterRender: function(){
 
-                        // start the video
-                        $('#video-section video').get(0).play();
+                        // hide the loader
+                        $timeout(function() {
+                            $rootScope.$broadcast('loader.hide');
 
-                    }, 500);
-                },
-            });
+                            // start the video
+                            $('#video-section video').get(0).play();
+
+                        }, 500);
+                    },
+                });
+
+            }, 10);
         });
 
         /**

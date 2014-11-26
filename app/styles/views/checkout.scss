@@ -1,0 +1,29 @@
+#checkout {
+	width: 100%;
+	height: 100%;
+
+	background-color: $kuck-blue;
+
+	.checkout-address {
+		color: $kuck-white;
+		padding: 40px 105px 40px 105px;
+
+		h4 {
+			font-weight: bold;
+			margin-bottom: 35px;
+		}
+
+		label {
+			font-weight: normal;
+		}
+
+		.billing-address {
+			@include span-columns(6 of 12);
+		}
+
+		.shipping-address {
+			@include span-columns(6 of 12);
+		}
+	}
+
+}

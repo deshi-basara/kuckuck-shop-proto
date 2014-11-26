@@ -37,6 +37,13 @@ angular
       templateUrl: 'scripts/routes/planner/planner.index.tpl.html',
       controller: 'PlannerCtrl',
       controllerAs: 'ctrl'
+    })
+
+    .state('checkout', {
+      url: '/checkout',
+      templateUrl: 'scripts/routes/checkout/checkout.index.tpl.html',
+      controller: 'CheckoutCtrl',
+      controllerAs: 'ctrl'
     });
 
   // if none of the above states are matched, use this as the fallback
