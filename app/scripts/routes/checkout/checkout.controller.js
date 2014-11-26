@@ -24,10 +24,21 @@
         });
 
 
+
+
         //////////////////////
 
         angular.extend(ctrl, {
-
+            check: {
+                account: false,
+                discount: false,
+                shipping: true,
+                pay: {
+                    paypal: false,
+                    credit: false,
+                    transfer: false
+                }
+            }
         });
     }
 

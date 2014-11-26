@@ -5,32 +5,220 @@
 
         <!-- Billing -->
         <div class="billing-address">
-            <h4>Versand-Adresse</h4>
-            <div class="form-group">
-                <label>Land</label>
+            <h4 class="col-sm-6">Rechnungsadresse</h4>
+
+            <!-- Country -->
+            <div class="form-group col-sm-12">
+                <label>Land <span>*</span></label>
                 <select class="form-control">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option>Deutschland</option>
+                    <option>Östereich</option>
+                    <option>Schweiz</option>
+                    <option>Frankreich</option>
+                    <option>Italien</option>
                 </select>
             </div>
-            <div class="form-group">
-                <label>Vorname</label>
-                <input type="text" class="form-control" class="col-sm-6">
-                <label>Nachname</label>
-                <input type="text" class="form-control" class="col-sm-6">
+
+            <!-- Name -->
+            <div class="form-group col-sm-6">
+                <label>Vorname <span>*</span></label>
+                <input type="text" class="form-control">
             </div>
+            <div class="form-group col-sm-6">
+                <label>Nachname <span>*</span></label>
+                <input type="text" class="form-control">
+            </div>
+
+            <!-- Company -->
+            <div class="form-group col-sm-12">
+                <label>Firma</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <!-- Address -->
+            <div class="form-group col-sm-12">
+                <label>Adresse</label>
+                <input type="text" class="form-control" placeholder="Straßenname 12">
+                <input type="text" class="form-control" placeholder="Adressenzusatz">
+            </div>
+
+            <!-- Town -->
+            <div class="form-group col-sm-12">
+                <label>Stadt <span>*</span></label>
+                <input type="text" class="form-control" placeholder="Stadtname">
+            </div>
+
+            <!-- Country/PLZ -->
+            <div class="form-group col-sm-6">
+                <label>Land</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-sm-6">
+                <label>PLZ <span>*</span></label>
+                <input type="text" class="form-control">
+            </div>
+
+            <!-- Email/Phone -->
+            <div class="form-group col-sm-6">
+                <label>Telefon <span>*</span></label>
+                <input type="text" class="form-control">
+            </div>
+
+            <!-- Create Account? -->
+            <div class="checkbox col-sm-12">
+                <label>
+                    <input type="checkbox" ng-model="ctrl.check.account"> Account erstellen?
+                </label>
+            </div>
+
+            <!-- Account Password -->
+            <div class="form-group col-sm-6" ng-show="ctrl.check.account">
+                <label>Passwort <span>*</span></label>
+                <input type="password" class="form-control">
+            </div>
+            <div class="form-group col-sm-6" ng-show="ctrl.check.account">
+                <label>Passwort wiederholen <span>*</span></label>
+                <input type="password" class="form-control">
+            </div>
+
 
         </div><!-- / Billing -->
 
         <!-- Shipping -->
         <div class="shipping-address">
-            <h4>Rechnungs-Adresse</h4>
+            <h4 class="col-sm-3">Lieferadresse</h4>
+            <div class="checkbox col-sm-9">
+                <label>
+                    <input type="checkbox" ng-model="ctrl.check.shipping"> Lieferadresse weicht von der Rechnungsadresse ab?
+                </label>
+            </div>
+
+            <!-- Country -->
+            <div class="form-group col-sm-12" ng-show="ctrl.check.shipping">
+                <label>Land <span>*</span></label>
+                <select class="form-control">
+                    <option>Deutschland</option>
+                    <option>Östereich</option>
+                    <option>Schweiz</option>
+                    <option>Frankreich</option>
+                    <option>Italien</option>
+                </select>
+            </div>
+
+            <!-- Name -->
+            <div class="form-group col-sm-6" ng-show="ctrl.check.shipping">
+                <label>Vorname <span>*</span></label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-sm-6" ng-show="ctrl.check.shipping">
+                <label>Nachname <span>*</span></label>
+                <input type="text" class="form-control">
+            </div>
+
+            <!-- Company -->
+            <div class="form-group col-sm-12" ng-show="ctrl.check.shipping">
+                <label>Firma</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <!-- Address -->
+            <div class="form-group col-sm-12" ng-show="ctrl.check.shipping">
+                <label>Adresse</label>
+                <input type="text" class="form-control" placeholder="Straßenname 12">
+                <input type="text" class="form-control" placeholder="Adressenzusatz">
+            </div>
+
+            <!-- Town -->
+            <div class="form-group col-sm-12" ng-show="ctrl.check.shipping">
+                <label>Stadt <span>*</span></label>
+                <input type="text" class="form-control" placeholder="Stadtname">
+            </div>
+
+            <!-- Country/PLZ -->
+            <div class="form-group col-sm-6" ng-show="ctrl.check.shipping">
+                <label>Land</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="form-group col-sm-6" ng-show="ctrl.check.shipping">
+                <label>PLZ <span>*</span></label>
+                <input type="text" class="form-control">
+            </div>
+
+            <!-- Order note -->
+            <div class="form-group col-sm-12">
+                <label>Anmerkungen</label>
+                <textarea rows="3" class="form-control">Besondere Bestellhinweise</textarea>
+            </div>
+
         </div><!-- / Shipping -->
 
 
     </div><!-- / Billing-/Ship-Adress -->
+
+    <!-- Order overview -->
+    <div class="order-overview col-sm-12">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="col-sm-10">Deine Bestellung</th>
+                    <th class="col-sm-2">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Klassische Kuckucksuhr <span class="total-amount">x 1</span></td>
+                    <td>200€</td>
+                </tr>
+                <!-- Total items -->
+                <tr>
+                    <td class="total">Artikelkosten</td>
+                    <td class="total">200€</td>
+                </tr>
+                <!-- Total shipping -->
+                <tr>
+                    <td class="total">Versandkosten</td>
+                    <td class="total">200€</td>
+                </tr>
+                <!-- Total total -->
+                <tr>
+                    <td class="total">Summe</td>
+                    <td class="total-total">200€</td>
+                </tr>
+            </tbody>
+        </table>
+    </div><!-- / Order overview -->
+
+    <div class="checkout-payment col-sm-12">
+        <ul class="list-group checkout-box">
+            <li class="list-group-item">
+                <div class="checkbox-item" ng-class="{ 'active': ctrl.check.pay.paypal }">
+                    <input type="checkbox" ng-model="ctrl.check.pay.paypal"> Paypal <div class="fa fa-cc-paypal fa-3x"></div>
+                </div>
+                <div class="checkbox-item" ng-class="{ 'active': ctrl.check.pay.credit }">
+                    <input type="checkbox" ng-model="ctrl.check.pay.credit"> KreditKarte
+                        <div class="fa fa-cc-mastercard fa-3x"></div>
+                        <div class="fa fa-cc-visa fa-3x"></div>
+                        <div class="fa fa-cc-stripe fa-3x"></div>
+                </div>
+                <div class="checkbox-item" ng-class="{ 'active': ctrl.check.pay.transfer }">
+                    <input type="checkbox" ng-model="ctrl.check.pay.transfer"> Überweißung
+                        <div class="fa fa-money fa-3x"></div>
+                </div>
+            </li>
+            <li class="list-group-item">
+                <div class="checkbox-item">
+                    <input type="checkbox" ng-model="ctrl.check.discount"> Ich habe einen Rabatt-Code
+                </div>
+                <div class="checkbox-item checkbox-group" ng-show="ctrl.check.discount">
+                    <input type="text" class="form-control">
+                    <button type="button" class="button">Abschicken</button>
+                </div>
+            </li>
+            <li class="list-group-item" style="text-align: right;">
+                <input type="checkbox"> Ich habe die AGBs gelesen
+                <button type="button" class="button">Jetzt bezahlen</button>
+            </li>
+        </ul>
+    </div>
 
 </div>

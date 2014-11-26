@@ -95,3 +95,23 @@ label {
     font-weight: bold;
     color: $kuck-orange !important;
 }
+
+/**
+ * Form control
+ */
+.form-group {
+    input, select {
+        height: 36px;
+        margin-bottom: 10px;
+        padding-left: 7px;
+        border: 2px solid #e2e2e2;
+        border-radius: 2px;
+    }
+
+    textarea {
+        margin-bottom: 10px;
+        padding-left: 7px;
+        border: 2px solid #e2e2e2;
+        border-radius: 2px;
+    }
+}
