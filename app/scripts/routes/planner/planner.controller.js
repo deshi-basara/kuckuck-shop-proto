@@ -22,7 +22,7 @@
                 menu: null,
                 direction: 'horizontal',
                 verticalCentered: true,
-                sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
+                sectionsColor: ['#fff', '#fff', '#fff', '#fff', '#fff'],
                 anchors: [],
                 scrollingSpeed: 700,
                 easing: 'swing',
