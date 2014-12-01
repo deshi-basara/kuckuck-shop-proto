@@ -104,14 +104,24 @@ label {
         height: 36px;
         margin-bottom: 10px;
         padding-left: 7px;
-        border: 2px solid #e2e2e2;
-        border-radius: 2px;
+        border: 2px solid $glf-grey;
+        border-radius: 0;
+        outline: 0;
+
+        @include transition(border 0.7s ease-in-out);
     }
 
     textarea {
         margin-bottom: 10px;
         padding-left: 7px;
-        border: 2px solid #e2e2e2;
-        border-radius: 2px;
+        border: 2px solid $glf-grey;
+        border-radius: 0;
+        outline: 0;
+
+        @include transition(border 0.7s ease-in-out);
+    }
+
+    .ng-pristine.ng-invalid {
+        border: 2px solid $kuck-orange;
     }
 }

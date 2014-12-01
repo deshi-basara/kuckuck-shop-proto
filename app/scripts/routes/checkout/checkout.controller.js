@@ -38,6 +38,8 @@
                     credit: false,
                     transfer: false
                 }
+            },
+            form: {
             }
         });
     }

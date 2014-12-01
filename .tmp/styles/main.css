@@ -144,14 +144,23 @@ label {
   height: 36px;
   margin-bottom: 10px;
   padding-left: 7px;
-  border: 2px solid #e2e2e2;
-  border-radius: 2px;
+  border: 2px solid #e6e6e6;
+  border-radius: 0;
+  outline: 0;
+  -webkit-transition: border 0.7s ease-in-out;
+  transition: border 0.7s ease-in-out;
 }
 .form-group textarea {
   margin-bottom: 10px;
   padding-left: 7px;
-  border: 2px solid #e2e2e2;
-  border-radius: 2px;
+  border: 2px solid #e6e6e6;
+  border-radius: 0;
+  outline: 0;
+  -webkit-transition: border 0.7s ease-in-out;
+  transition: border 0.7s ease-in-out;
+}
+.form-group .ng-pristine.ng-invalid {
+  border: 2px solid #ffa600;
 }
 
 .animate-show {
