@@ -239,6 +239,7 @@ label {
 #navigation .container-fluid .collapse ul li {
   height: 72px;
   border-bottom: 0;
+  z-index: 2;
   -webkit-transition: border-bottom 0.2s ease-in-out;
   transition: border-bottom 0.2s ease-in-out;
 }
@@ -257,6 +258,19 @@ label {
 }
 #navigation .container-fluid .collapse ul li.complete a {
   color: #f2f2f2;
+}
+#navigation .container-fluid .collapse ul li:last-child {
+  z-index: 1;
+  opacity: 0;
+  -webkit-transform: translate3d(0, -70px, 0);
+  transform: translate3d(0, -70px, 0);
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+#navigation .container-fluid .collapse ul li:last-child.in {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 #footer {

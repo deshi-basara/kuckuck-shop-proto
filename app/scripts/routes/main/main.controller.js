@@ -41,8 +41,33 @@
             main.bagOpen = (main.bagOpen === false) ? true : false;
         }
 
+        //////////////////////
+
+        angular.extend(main, {
+            bagOpen: false,
+            isLoading: true,
+            showFeedback: false,
+            priceTotal: 0,
+
+            bagItems: null,
+            complete: {
+                gehaeuse: false,
+                material: false,
+                ausstattung: false,
+                farben: false,
+                extras: false,
+                checkout: false
+            },
+
+            checkoutBag: checkoutBag,
+            isActive: isActive,
+            toggleBag: toggleBag
+        });
+
+        //////////////////////
+
         /**
-         * Listen for navigation changes.
+         * Listens for navigation 'active' changes.
          * @param  {object} broadEvent [Angular broadcast object]
          * @param  {int}    index      [Current slider index]
          */
@@ -51,6 +76,18 @@
                 main.enabled = index;
             });
         });
+
+        /**
+         * Listens for navigation 'complete' changes.
+         * @param  {object} broadEvent [Angular broadcast object]
+         * @param  {string} key        [Object key of the completed navigation item (main.complete)]
+         */
+        $scope.$on('nav.complete', function(broadEvent, key) {
+            $scope.$apply(function() {
+                main.complete[key] = true;
+            });
+        });
+
 
         /**
          * Listens for requests to see the loader.
@@ -68,28 +105,6 @@
             $scope.$apply(function() {
                 main.isLoading = false;
             });
-        });
-
-        //////////////////////
-
-        angular.extend(main, {
-            bagOpen: false,
-            isLoading: true,
-            showFeedback: false,
-            priceTotal: 0,
-
-            bagItems: null,
-            complete: {
-                gehaeuse: true,
-                material: false,
-                ausstattung: false,
-                farben: false,
-                extras: false
-            },
-
-            checkoutBag: checkoutBag,
-            isActive: isActive,
-            toggleBag: toggleBag
         });
     }
 
