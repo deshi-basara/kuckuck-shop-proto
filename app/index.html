@@ -142,9 +142,28 @@
         </div>
 
         <!--
-            Footer
+            Modal
         -->
-        <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+        <script type="text/ng-template" id="/tpl.html">
+
+        </script>
+        <div class="custom-modal">
+            <div class="custom-modal-header">
+                <div class="custom-modal-header-item active">Login</div>
+                <div class="custom-modal-header-item">Registrierung</div>
+            </div>
+            <div class="custom-modal-body">
+                <i class="fa fa-tree fa-3x"></i>
+
+                <div class="input-group">
+                    <label>Benutzername</label>
+                    <input type="text" ng-model="main.login.name">
+                </div>
+            </div>
+            <div class="custom-modal-warning">
+                Warn
+            </div>
+        </div>
 
         <!--
             Vendor scripts

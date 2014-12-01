@@ -35,6 +35,12 @@
         }
 
         /**
+         * Opens the login&registration modal
+         */
+        function openModal() {
+        }
+
+        /**
          * Toggles the shopping car open state.
          */
         function toggleBag() {
@@ -106,6 +112,10 @@
                 main.isLoading = false;
             });
         });
+
+        ////////////////////
+
+        openModal();
     }
 
 })();
