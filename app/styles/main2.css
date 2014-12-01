@@ -27,7 +27,20 @@
 }
 
 .color{
-	margin: 15px 0px;
+	margin: 15px 0 15px 0px;
+}
+
+.color2{
+
+    margin: 0 7px 10px 9px;
+}
+
+.colormaterial{
+    margin-left: 12px;
+}
+
+.colorausstattung{
+    margin-left: 33px;
 }
 
 .contact{
