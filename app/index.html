@@ -71,7 +71,7 @@
                         <li ng-class="{ 'enabled': main.enabled == 5, 'complete': main.complete.extras }">
                             <a href="#/planer#5">Extras</a>
                         </li>
-                        <li ng-class="{ 'enabled': main.enabled == 6, 'complete': main.complete.checkout, 'in': main.checkout }">
+                        <li ng-class="{ 'enabled': main.enabled == 6, 'complete-none': main.complete.checkout, 'in': main.complete.checkout }">
                             <a href="#/checkout">Bezahlen</a>
                         </li>
                     </ul>
@@ -211,11 +211,11 @@
         <script src="scripts/filters/agsBytes.filter.js"></script>
         <script src="scripts/directives/loader/loader.directive.js"></script>
         <script src="scripts/directives/progress/progress.directive.js"></script>
-        <script src="scripts/services/auth/auth.service.js"></script>
-        <script src="scripts/routes/checkout/checkout.controller.js"></script>
         <script src="scripts/routes/landing/landing.controller.js"></script>
-        <script src="scripts/routes/planner/planner.controller.js"></script>
+        <script src="scripts/routes/checkout/checkout.controller.js"></script>
         <script src="scripts/routes/main/main.controller.js"></script>
+        <script src="scripts/routes/planner/planner.controller.js"></script>
+        <script src="scripts/services/auth/auth.service.js"></script>
         <!-- endinject -->
         <!-- endbuild -->
 

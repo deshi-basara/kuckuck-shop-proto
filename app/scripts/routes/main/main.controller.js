@@ -82,9 +82,7 @@
          * @param  {int}    index      [Current slider index]
          */
         $scope.$on('nav.change', function(broadEvent, index) {
-            $scope.$apply(function() {
-                main.enabled = index;
-            });
+            main.enabled = index;
         });
 
         /**
@@ -93,11 +91,21 @@
          * @param  {string} key        [Object key of the completed navigation item (main.complete)]
          */
         $scope.$on('nav.complete', function(broadEvent, key) {
-            $scope.$apply(function() {
-                main.complete[key] = true;
-            });
-        });
+            main.complete[key] = true;
 
+            // when colors are completed, show the checkout navigation
+            if(key === 'farben') {
+                main.complete.checkout = true;
+            }
+        });
+        $scope.$on('nav.uncomplete', function(broadEvent, key) {
+            main.complete[key] = false;
+
+            // when extras are uncompleted, hide the checkout navigation
+            if(key === 'extras') {
+                main.complete.checkout = false;
+            }
+        });
 
         /**
          * Listens for requests to see the loader.

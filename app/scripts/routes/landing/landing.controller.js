@@ -25,7 +25,7 @@
                 $('#landing').pagepiling({
                     menu: null,
                     direction: 'vertical',
-                    verticalCentered: true,
+                    verticalCentered: false,
                     sectionsColor: ['#f2f2f2', '#4BBFC3', '#7BAABE', 'whitesmoke', '#000'],
                     anchors: [],
                     scrollingSpeed: 700,

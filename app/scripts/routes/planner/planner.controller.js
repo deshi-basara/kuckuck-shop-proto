@@ -6,65 +6,69 @@
         .module('app')
         .controller('PlannerCtrl', PlannerCtrl);
 
-    PlannerCtrl.$inject = ['$window','$stateParams','$location','$scope', '$rootScope', '$timeout'];
+    PlannerCtrl.$inject = ['$window','$stateParams','$location','$scope', '$rootScope', '$timeout', '$state'];
 
     /**
      * Handles the landing view and all interactions
      */
-    function PlannerCtrl($window, $stateParams, $location, $scope, $rootScope, $timeout) {
+    function PlannerCtrl($window, $stateParams, $location, $scope, $rootScope, $timeout, $state) {
         var ctrl = this;
 
         /**
          * Initiate pagepilling when the dom is ready
          */
         angular.element(document).ready(function () {
-            $('#planner').pagepiling({
-                menu: null,
-                direction: 'horizontal',
-                verticalCentered: true,
-                sectionsColor: ['#fff', '#fff', '#fff', '#fff', '#fff'],
-                anchors: [],
-                scrollingSpeed: 700,
-                easing: 'swing',
-                loopBottom: false,
-                loopTop: false,
-                css3: true,
-                navigation: false,
-                normalScrollElements: null,
-                normalScrollElementTouchThreshold: 5,
-                touchSensitivity: 5,
-                keyboardScrolling: true,
-                sectionSelector: '.section',
-                animateAnchor: false,
+            $timeout(function() {
 
-                //events
-                onLeave: function(index, nextIndex, direction) {
-                    $rootScope.$broadcast('nav.change', nextIndex);
-                },
-                afterLoad: function(anchorLink, index) {
+                $('#planner').pagepiling({
+                    menu: null,
+                    direction: 'horizontal',
+                    verticalCentered: true,
+                    sectionsColor: ['#fff', '#fff', '#fff', '#fff', '#fff'],
+                    anchors: [],
+                    scrollingSpeed: 700,
+                    easing: 'swing',
+                    loopBottom: false,
+                    loopTop: false,
+                    css3: true,
+                    navigation: false,
+                    normalScrollElements: '.section',
+                    normalScrollElementTouchThreshold: 5,
+                    touchSensitivity: 5,
+                    keyboardScrolling: true,
+                    sectionSelector: '.section',
+                    animateAnchor: false,
 
-                },
-                afterRender: function() {
-                    // get the startIndex on the first load
-                    var startIndex = parseInt($location.hash());
+                    //events
+                    onLeave: function(index, nextIndex, direction) {
+                        $rootScope.$broadcast('nav.change', nextIndex);
+                    },
+                    afterLoad: function(anchorLink, index) {
 
-                    // fallback, if nothing was set
-                    if(!startIndex) {
-                        startIndex = 1;
-                    }
+                    },
+                    afterRender: function() {
+                        // get the startIndex on the first load
+                        var startIndex = parseInt($location.hash());
 
-                    // broadcast index
-                    $rootScope.$broadcast('nav.change', startIndex);
+                        // fallback, if nothing was set
+                        if(!startIndex) {
+                            startIndex = 1;
+                        }
 
-                    // go to the wished index
-                    $.fn.pagepiling.moveTo(startIndex);
+                        // broadcast index
+                        $rootScope.$broadcast('nav.change', startIndex);
 
-                    // hide the loader
-                    $timeout(function() {
-                        $rootScope.$broadcast('loader.hide');
-                    }, 1000);
-                },
-            });
+                        // go to the wished index
+                        $.fn.pagepiling.moveTo(startIndex);
+
+                        // hide the loader
+                        $timeout(function() {
+                            $rootScope.$broadcast('loader.hide');
+                        }, 1000);
+                    },
+                });
+
+            }, 10);
         });
 
         /**
@@ -77,11 +81,30 @@
             $.fn.pagepiling.moveTo(newIndex);
         });
 
+        /**
+         * Redirects to the next configurator step
+         */
+        function nextStep(complete) {
+            $rootScope.$broadcast('nav.complete', complete);
+            $.fn.pagepiling.moveSectionDown();
+
+            if(complete === 'extras') {
+                $state.go('checkout');
+            }
+        }
+
+        function previousStep(uncomplete) {
+            $rootScope.$broadcast('nav.uncomplete', uncomplete);
+            $.fn.pagepiling.moveSectionUp();
+        }
+
 
         //////////////////////
 
         angular.extend(ctrl, {
 
+            nextStep: nextStep,
+            previousStep: previousStep
         });
     }
 
