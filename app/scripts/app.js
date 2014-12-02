@@ -10,7 +10,8 @@ angular
   'LocalStorageModule',
   'ngAnimate',
   'ngTable',
-  'oitozero.ngSweetAlert'
+  'oitozero.ngSweetAlert',
+  'countTo'
 ])
 
 .constant('config', {
