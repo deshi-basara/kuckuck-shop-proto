@@ -30,10 +30,6 @@
     margin-top: 100px;
 }
 
-.uhrenvorlage{
-    margin-top: 70px;
-    background: #7BAABE;
-}
 hr { 
     display: block;
     margin-left: auto;
@@ -41,9 +37,6 @@ hr {
     border-width: 2px;
 } 
 
-.portfolio-item{
-    padding:40px 20px;
-}
 
 #slider{
     padding-top: 20px;
@@ -107,5 +100,46 @@ hr {
     color: #252525;
     text-transform: uppercase;
     margin-bottom: 25px;
+}
+
+#planner {
+
+    .container {
+        margin-top: -200px;
+        height: 600px;
+
+        .button-orange {
+            float: right;
+        }
+
+        .button-blue {
+            float: left;
+        }
+    }
+
+    .uhrenvorlage{
+        position: absolute;
+        width: 102%;
+        height: 170px;
+        bottom: 70px;
+        margin-top: 70px;
+        background: #7BAABE;
+        text-align: center;
+
+        h4 {
+            color: $kuck-white;
+        }
+
+        .portfolio-item{
+            display: inline-block;
+            padding-right: 20px;
+            padding-left: 20px;
+
+            img {
+                height: 110px;
+                width: auto;
+            }
+        }
+    }
 }
 
