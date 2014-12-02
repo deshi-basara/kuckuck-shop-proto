@@ -35,9 +35,10 @@
         }
 
         /**
-         * Opens the login&registration modal
+         * Submits the login data (actually just closes the modal)
          */
-        function openModal() {
+        function submitLogin() {
+            main.showModal = false;
         }
 
         /**
@@ -53,6 +54,8 @@
             bagOpen: false,
             isLoading: true,
             showFeedback: false,
+            showLogin: true,
+            showModal: false,
             priceTotal: 0,
 
             bagItems: null,
@@ -67,6 +70,7 @@
 
             checkoutBag: checkoutBag,
             isActive: isActive,
+            submitLogin: submitLogin,
             toggleBag: toggleBag
         });
 
@@ -115,7 +119,6 @@
 
         ////////////////////
 
-        openModal();
     }
 
 })();

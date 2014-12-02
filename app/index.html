@@ -78,7 +78,8 @@
 
                     <!-- Nav right -->
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="">Einloggen</a></li>
+                        <!--<li>Eingeloggt als {{ main.login.name }}</li>-->
+                        <li ng-click="main.showModal = !main.showModal"><a href="">Einloggen</a></li>
                         <li ng-click="main.toggleBag()">
                             <a href=""><i class="glyphicon glyphicon-shopping-cart"></i></a>
                         </li>
@@ -147,22 +148,34 @@
         <script type="text/ng-template" id="/tpl.html">
 
         </script>
-        <div class="custom-modal">
-            <div class="custom-modal-header">
-                <div class="custom-modal-header-item active">Login</div>
-                <div class="custom-modal-header-item">Registrierung</div>
-            </div>
-            <div class="custom-modal-body">
-                <i class="fa fa-tree fa-3x"></i>
+        <div class="custom-modal" ng-hide="!main.showModal">
 
-                <div class="input-group">
-                    <label>Benutzername</label>
-                    <input type="text" ng-model="main.login.name">
+            <div class="custom-modal-overlay" ng-click="main.showModal = !main.showModal"></div>
+            <div class="custom-modal-box">
+                <div class="custom-modal-header">
+                    <div class="custom-modal-header-item" ng-class="{ 'active': main.showLogin }">Login</div>
+                    <div class="custom-modal-header-item" ng-class="{ 'active': !main.showLogin }">Registrierung</div>
                 </div>
+                <div class="custom-modal-body">
+                    <div>
+                    <i class="fa fa-tree fa-4x"></i>
+
+                    <div class="input-group">
+                        <label>Benutzername</label>
+                        <input type="text" class="form-control" ng-model="main.login.name">
+                    </div>
+                    <div class="input-group">
+                        <label>Passwort</label>
+                        <input type="text" class="form-control" ng-model="main.login.pass">
+                    </div>
+                    <button class="button button-blue" ng-click="main.submitLogin()">Einloggen</button>
+                    </div>
+                </div>
+                <!--<div class="custom-modal-warning">
+                    Warn
+                </div>-->
             </div>
-            <div class="custom-modal-warning">
-                Warn
-            </div>
+
         </div>
 
         <!--
