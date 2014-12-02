@@ -133,7 +133,7 @@ gulp.task('html', function() {
 		// ngAnnotate angular scripts
 		.pipe($.if('**/main.min.js', $.ngAnnotate()))
 		// Concatenate And Minify
-		.pipe($.if('**/main.min.js', $.uglify()))
+		.pipe($.if('**/main.min.js', $.uglify({preserveComments: 'some'})))
 		.pipe($.if('**/vendor.min.js', $.uglify()))
 		.pipe($.if('*.css', $.csso()))
 		.pipe(assets.restore()) // brings back the previously filtered out HTML files
