@@ -78,9 +78,8 @@
 
                     <!-- Nav right -->
                     <ul class="nav navbar-nav navbar-right">
-                        <!--<li>Eingeloggt als {{ main.login.name }}</li>-->
                         <li ng-click="main.showModal = !main.showModal"><a href="">Einloggen</a></li>
-                        <li ng-click="main.toggleBag()">
+                        <li class="in" ng-click="main.toggleBag()">
                             <a href=""><i class="glyphicon glyphicon-shopping-cart"></i></a>
                         </li>
                     </ul><!-- / Nav right -->
@@ -209,10 +208,10 @@
         <!-- inject:js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/filters/agsBytes.filter.js"></script>
-        <script src="scripts/directives/loader/loader.directive.js"></script>
         <script src="scripts/directives/progress/progress.directive.js"></script>
-        <script src="scripts/routes/landing/landing.controller.js"></script>
+        <script src="scripts/directives/loader/loader.directive.js"></script>
         <script src="scripts/routes/checkout/checkout.controller.js"></script>
+        <script src="scripts/routes/landing/landing.controller.js"></script>
         <script src="scripts/routes/main/main.controller.js"></script>
         <script src="scripts/routes/planner/planner.controller.js"></script>
         <script src="scripts/services/auth/auth.service.js"></script>
