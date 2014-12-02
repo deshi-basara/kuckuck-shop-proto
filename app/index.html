@@ -24,7 +24,6 @@
         <link rel="stylesheet" href="../bower_components/sweetalert/lib/sweet-alert.css" />
         <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="../bower_components/pagepiling.js/jquery.pagepiling.css" />
-        <link rel="stylesheet" href="../bower_components/angular-loading-bar/build/loading-bar.css" />
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -33,10 +32,7 @@
         -->
         <!-- build:css({.tmp,app}) styles/main.min.css -->
         <link rel="stylesheet" href="styles/main.css">
-        <link rel="stylesheet" href="styles/main2.css">
         <!-- endbuild -->
-
-        <script src="../bower_components/modernizr/modernizr.js"></script>
     </head>
     <body ng-app="app" ng-controller="MainCtrl as main">
 
@@ -91,7 +87,6 @@
         <!--
             Custom loader directive
         -->
-        <!--<ags-loaders></ags-loaders>-->
         <div class="ags-loader" ng-class="{ 'loading': main.isLoading }" ng-show="main.isLoading" ng-cloak>
             <img ng-src="images/preloaders/Preloader_2/Preloader_2.gif">
         </div>
@@ -144,9 +139,6 @@
         <!--
             Modal
         -->
-        <script type="text/ng-template" id="/tpl.html">
-
-        </script>
         <div class="custom-modal" ng-hide="!main.showModal">
 
             <div class="custom-modal-overlay" ng-click="main.showModal = !main.showModal"></div>
@@ -183,6 +175,7 @@
         <!-- build:js scripts/vendor.min.js -->
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/modernizr/modernizr.js"></script>
         <script src="../bower_components/angular/angular.js"></script>
         <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
         <script src="../bower_components/traceur/traceur.js"></script>
@@ -195,7 +188,6 @@
         <script src="../bower_components/angular-sweetalert/SweetAlert.js"></script>
         <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
         <script src="../bower_components/pagepiling.js/jquery.pagepiling.min.js"></script>
-        <script src="../bower_components/angular-loading-bar/build/loading-bar.js"></script>
         <script src="../bower_components/walkway.js/src/walkway.js"></script>
         <!-- endbower -->
         <script src="lib/angular-count-to.min.js"></script>
@@ -210,11 +202,11 @@
         <script src="scripts/filters/agsBytes.filter.js"></script>
         <script src="scripts/directives/loader/loader.directive.js"></script>
         <script src="scripts/directives/progress/progress.directive.js"></script>
+        <script src="scripts/services/auth/auth.service.js"></script>
         <script src="scripts/routes/checkout/checkout.controller.js"></script>
         <script src="scripts/routes/landing/landing.controller.js"></script>
         <script src="scripts/routes/main/main.controller.js"></script>
         <script src="scripts/routes/planner/planner.controller.js"></script>
-        <script src="scripts/services/auth/auth.service.js"></script>
         <!-- endinject -->
         <!-- endbuild -->
 
