@@ -20,8 +20,6 @@
         angular.element(document).ready(function () {
             setTimeout(function() {
 
-                console.log('pagepiling');
-
                 $('#landing').pagepiling({
                     menu: null,
                     direction: 'vertical',
