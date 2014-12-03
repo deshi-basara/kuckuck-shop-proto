@@ -1028,6 +1028,12 @@ label {
   margin-left: 40px;
   background-color: #ffa600;
 }
+#checkout .checkout-payment .checkout-final {
+  text-align: right;
+}
+#checkout .checkout-payment .checkout-final span {
+  margin-right: 20px;
+}
 
 .konfigurator {
   margin-top: 100px;
