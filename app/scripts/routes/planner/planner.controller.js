@@ -82,6 +82,13 @@
         });
 
         /**
+         * Creates a fake shopping card item
+         */
+        function addToCard() {
+            $rootScope.$broadcast('card.item');
+        }
+
+        /**
          * Redirects to the next configurator step
          */
         function nextStep(complete) {
@@ -103,6 +110,7 @@
 
         angular.extend(ctrl, {
 
+            addToCard: addToCard,
             nextStep: nextStep,
             previousStep: previousStep
         });

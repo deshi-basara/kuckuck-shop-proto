@@ -49,13 +49,13 @@
 
         .shopping-empty.feedback {
             .fa-heart {
-                color: $kuck-bluer;
+                color: $kuck-orange;
 
                 @include transition(all 0.7s ease-in-out);
             }
 
             .empty span {
-                color: $kuck-bluer;
+                color: $kuck-orange;
 
                 @include transition(all 0.7s ease-in-out);
             }
@@ -136,7 +136,7 @@
 
             .button {
                 margin-top: 15px;
-                color: $glf-dark;
+                color: $kuck-white;
                 width: 100%;
             }
         }

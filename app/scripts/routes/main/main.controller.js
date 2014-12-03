@@ -6,12 +6,12 @@
         .module('app')
         .controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = ['$scope', '$location'];
+    MainCtrl.$inject = ['$scope', '$location', '$state'];
 
     /**
      * Handles the landing view and all interactions
      */
-    function MainCtrl($scope, $location) {
+    function MainCtrl($scope, $location, $state) {
         var main = this;
 
         /**
@@ -19,10 +19,11 @@
          */
         function checkoutBag() {
             // validate
-            if(!main.bagItems) {
+            if(main.bagItems.length === 0) {
                 return main.showFeedback = true;
             }
 
+            $state.go('checkout');
         }
 
         /**
@@ -58,7 +59,7 @@
             showModal: false,
             priceTotal: 0,
 
-            bagItems: null,
+            bagItems: [],
             complete: {
                 gehaeuse: false,
                 material: false,
@@ -75,6 +76,13 @@
         });
 
         //////////////////////
+
+        /**
+         * Listens for new shopping card items
+         */
+        $scope.$on('card.item', function() {
+            main.bagItems.push('fake');
+        });
 
         /**
          * Listens for navigation 'active' changes.

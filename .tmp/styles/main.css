@@ -794,12 +794,12 @@ label {
   font-size: 14px;
 }
 #shopping-bag .shopping-content .shopping-empty.feedback .fa-heart {
-  color: #4bbfc3;
+  color: #ffa600;
   -webkit-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
 }
 #shopping-bag .shopping-content .shopping-empty.feedback .empty span {
-  color: #4bbfc3;
+  color: #ffa600;
   -webkit-transition: all 0.7s ease-in-out;
   transition: all 0.7s ease-in-out;
 }
@@ -876,7 +876,7 @@ label {
 }
 #shopping-bag .shopping-content .shopping-footer .button {
   margin-top: 15px;
-  color: #434343;
+  color: #f2f2f2;
   width: 100%;
 }
 
@@ -1173,7 +1173,7 @@ hr {
 }
 #planner .uhrenvorlage {
   position: absolute;
-  width: 102%;
+  width: 100.8%;
   height: 170px;
   bottom: 70px;
   margin-top: 70px;

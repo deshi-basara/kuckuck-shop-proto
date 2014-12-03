@@ -102,13 +102,13 @@
         <div id="shopping-bag" ng-cloak>
             <div class="shopping-content">
                 <div class="shopping-header">Dein Einkaufswaagen</div>
-                <div class="shopping-empty" ng-class="{ 'feedback': main.showFeedback }" ng-show="!main.bagItems">
+                <div class="shopping-empty" ng-class="{ 'feedback': main.showFeedback }" ng-show="main.bagItems.length === 0">
                     <i class="fa fa-heart fa-3x"></i>
                     <div class="empty">Dein Waagen ist <span>leer</span>.</div>
                     <div class="empty-subline">Zeige uns deine kreativste Kuckucksuhr!</div>
                 </div>
                 <div class="shopping-item-list">
-                    <div class="shopping-item" ng-hide="!main.bagItems">
+                    <div class="shopping-item" ng-repeat="item in main.bagItems" ng-hide="main.bagItems.length === 0">
                         <div class="item-left">
                             <img src="images/watches/classic/gruen.png">
                             <div class="item-desc">
@@ -130,8 +130,8 @@
                 </div>
                 <div class="shopping-footer">
                     <div class="shopping-price-label">Total:</div>
-                    <div class="shopping-price">{{ main.priceTotal }} €</div>
-                    <button type="button" class="button" ng-click="main.checkoutBag()">Checkout</button>
+                    <div class="shopping-price">{{ main.bagItems.length * 280 }} €</div>
+                    <button type="button" class="button button-orange" ng-click="main.checkoutBag()">Zur Bezahlung</button>
                 </div>
             </div>
         </div>
@@ -202,11 +202,11 @@
         <script src="scripts/filters/agsBytes.filter.js"></script>
         <script src="scripts/directives/loader/loader.directive.js"></script>
         <script src="scripts/directives/progress/progress.directive.js"></script>
-        <script src="scripts/services/auth/auth.service.js"></script>
         <script src="scripts/routes/checkout/checkout.controller.js"></script>
         <script src="scripts/routes/landing/landing.controller.js"></script>
         <script src="scripts/routes/main/main.controller.js"></script>
         <script src="scripts/routes/planner/planner.controller.js"></script>
+        <script src="scripts/services/auth/auth.service.js"></script>
         <!-- endinject -->
         <!-- endbuild -->
 
