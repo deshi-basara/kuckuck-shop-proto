@@ -849,6 +849,7 @@ label {
   margin-top: 5px;
 }
 #shopping-bag .shopping-content .shopping-item-list .shopping-item .item-right .item-controls i {
+  cursor: pointer;
   padding: 5px;
 }
 #shopping-bag .shopping-content .shopping-item-list .shopping-item .item-right .item-price {

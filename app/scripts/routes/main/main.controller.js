@@ -6,12 +6,12 @@
         .module('app')
         .controller('MainCtrl', MainCtrl);
 
-    MainCtrl.$inject = ['$scope', '$location', '$state'];
+    MainCtrl.$inject = ['$scope', '$location', '$state', 'SweetAlert'];
 
     /**
      * Handles the landing view and all interactions
      */
-    function MainCtrl($scope, $location, $state) {
+    function MainCtrl($scope, $location, $state, SweetAlert) {
         var main = this;
 
         /**
@@ -49,6 +49,10 @@
             main.bagOpen = (main.bagOpen === false) ? true : false;
         }
 
+        function notImplemented() {
+            SweetAlert.swal("Oh noooo", "Diese Funktionalität hat es leider nicht in den Prototypen geschafft :'-(");
+        }
+
         //////////////////////
 
         angular.extend(main, {
@@ -71,6 +75,7 @@
 
             checkoutBag: checkoutBag,
             isActive: isActive,
+            notImplemented: notImplemented,
             submitLogin: submitLogin,
             toggleBag: toggleBag
         });

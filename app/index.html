@@ -121,8 +121,8 @@
                         </div>
                         <div class="item-right">
                             <div class="item-controls">
-                                <i class="fa fa-times-circle"></i><br>
-                                <i class="fa fa-wrench"></i>
+                                <i class="fa fa-times-circle" ng-click="main.notImplemented()"></i><br>
+                                <i class="fa fa-wrench" ng-click="main.notImplemented()"></i>
                             </div>
                             <div class="item-price">280 €</div>
                         </div>
@@ -145,7 +145,7 @@
             <div class="custom-modal-box">
                 <div class="custom-modal-header">
                     <div class="custom-modal-header-item" ng-class="{ 'active': main.showLogin }">Login</div>
-                    <div class="custom-modal-header-item" ng-class="{ 'active': !main.showLogin }">Registrierung</div>
+                    <div class="custom-modal-header-item" ng-class="{ 'active': !main.showLogin }" ng-click="main.notImplemented()">Registrierung</div>
                 </div>
                 <div class="custom-modal-body">
                     <div>
