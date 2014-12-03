@@ -27,7 +27,6 @@ html, body {
   height: 100%;
   width: 100%;
   z-index: 2;
-  overflow-y: scroll;
 }
 
 footer {
@@ -916,13 +915,34 @@ label {
 }
 #checkout {
   position: absolute;
+  top: 0px;
   width: 100%;
-  height: 1450px;
+  height: 100%;
   background-color: #7baabe;
 }
+#checkout .section {
+  width: 80%;
+  margin-left: 10%;
+}
+#checkout .button-section-up {
+  position: absolute;
+  text-align: center;
+  width: 87%;
+  top: 32px;
+}
+#checkout .button-section-up-last {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 32px;
+}
+#checkout .button-section-down {
+  position: absolute;
+  text-align: center;
+  width: 87%;
+  bottom: 100px;
+}
 #checkout .checkout-address {
-  position: relative;
-  height: auto;
   color: #f2f2f2;
   padding: 40px 90px 40px 90px;
 }
@@ -941,7 +961,7 @@ label {
   float: left;
   display: block;
   margin-right: 2.3576515979%;
-  width: 48.821174201%;
+  width: 100%;
 }
 #checkout .checkout-address .billing-address:last-child {
   margin-right: 0;
@@ -950,7 +970,7 @@ label {
   float: left;
   display: block;
   margin-right: 2.3576515979%;
-  width: 48.821174201%;
+  width: 100%;
 }
 #checkout .checkout-address .shipping-address:last-child {
   margin-right: 0;
@@ -961,6 +981,11 @@ label {
   color: #f2f2f2;
   padding: 40px 100px 40px 100px;
 }
+#checkout .order-overview h4 {
+  font-weight: bold;
+  margin-bottom: 35px;
+  margin-left: -16px;
+}
 #checkout .order-overview table .total, #checkout .order-overview table .total-total, #checkout .order-overview table .total-amount {
   font-weight: bold;
 }
@@ -968,8 +993,6 @@ label {
   font-size: 1.75em;
 }
 #checkout .checkout-payment {
-  position: relative;
-  height: auto;
   color: #333333;
   padding: 40px 100px 40px 100px;
 }

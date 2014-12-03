@@ -1,11 +1,11 @@
 <form id="checkout" novalidate>
 
-    <!-- Billing-/Ship-Adress -->
-    <div class="checkout-address">
+    <!-- Section 1 -->
+    <div class="section checkout-address" data-anchor="section1">
 
         <!-- Billing -->
         <div class="billing-address">
-            <h4 class="col-sm-6">Rechnungsadresse</h4>
+            <h4 class="col-sm-6">1/3 Rechnungsadresse</h4>
 
             <!-- Country -->
             <div class="form-group col-sm-12">
@@ -81,12 +81,28 @@
                 <input type="password" class="form-control" ng-model="ctrl.form.pass2" required>
             </div>
 
-
         </div><!-- / Billing -->
+
+        <div class="button-section-down">
+            <button class="button button-orange" ng-click="ctrl.scrollDown()">
+                <i class="fa fa-angle-down"></i>
+            </button>
+        </div>
+
+    </div><!-- / Section 1 -->
+
+    <!-- Section 2 -->
+    <div class="section checkout-address" data-anchor="section2">
+
+        <div class="button-section-up">
+            <button class="button button-orange" ng-click="ctrl.scrollUp()">
+                <i class="fa fa-angle-up"></i>
+            </button>
+        </div>
 
         <!-- Shipping -->
         <div class="shipping-address">
-            <h4 class="col-sm-3">Lieferadresse</h4>
+            <h4 class="col-sm-3">2/3 Lieferadresse</h4>
             <div class="checkbox col-sm-9">
                 <label>
                     <input type="checkbox" ng-model="ctrl.check.shipping"> Lieferadresse weicht von der Rechnungsadresse ab?
@@ -152,74 +168,91 @@
 
         </div><!-- / Shipping -->
 
+        <div class="button-section-down">
+            <button class="button button-orange" ng-click="ctrl.scrollDown()">
+                <i class="fa fa-angle-down"></i>
+            </button>
+        </div>
 
-    </div><!-- / Billing-/Ship-Adress -->
+    </div><!-- Section 2 -->
 
-    <!-- Order overview -->
-    <div class="order-overview col-sm-12">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th class="col-sm-10">Deine Bestellung</th>
-                    <th class="col-sm-2">Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Klassische Kuckucksuhr <span class="total-amount">x 1</span></td>
-                    <td>200€</td>
-                </tr>
-                <!-- Total items -->
-                <tr>
-                    <td class="total">Artikelkosten</td>
-                    <td class="total">200€</td>
-                </tr>
-                <!-- Total shipping -->
-                <tr>
-                    <td class="total">Versandkosten</td>
-                    <td class="total">200€</td>
-                </tr>
-                <!-- Total total -->
-                <tr>
-                    <td class="total">Summe</td>
-                    <td class="total-total">200€</td>
-                </tr>
-            </tbody>
-        </table>
-    </div><!-- / Order overview -->
+    <!-- Section 3 -->
+    <div class="section" data-anchor="section3">
 
-    <div class="checkout-payment col-sm-12">
-        <ul class="list-group checkout-box">
-            <li class="list-group-item">
-                <div class="checkbox-item" ng-class="{ 'active': ctrl.check.pay.paypal }">
-                    <input type="checkbox" ng-model="ctrl.check.pay.paypal"> Paypal <div class="fa fa-cc-paypal fa-3x"></div>
-                </div>
-                <div class="checkbox-item" ng-class="{ 'active': ctrl.check.pay.credit }">
-                    <input type="checkbox" ng-model="ctrl.check.pay.credit"> KreditKarte
-                        <div class="fa fa-cc-mastercard fa-3x"></div>
-                        <div class="fa fa-cc-visa fa-3x"></div>
-                        <div class="fa fa-cc-stripe fa-3x"></div>
-                </div>
-                <div class="checkbox-item" ng-class="{ 'active': ctrl.check.pay.transfer }">
-                    <input type="checkbox" ng-model="ctrl.check.pay.transfer"> Überweißung
-                        <div class="fa fa-money fa-3x"></div>
-                </div>
-            </li>
-            <li class="list-group-item">
-                <div class="checkbox-item">
-                    <input type="checkbox" ng-model="ctrl.check.discount"> Ich habe einen Rabatt-Code
-                </div>
-                <div class="checkbox-item checkbox-group" ng-show="ctrl.check.discount">
-                    <input type="text" class="form-control">
-                    <button type="button" class="button">Abschicken</button>
-                </div>
-            </li>
-            <li class="list-group-item checkout-final">
-                <span><input type="checkbox"> Ich akzeptiere das Widerrufsrecht</span>
-                <span><input type="checkbox"> Ich akzeptiere die AGBs</span>
-                <button type="submit" class="button">Jetzt zahlungspflichtig kaufen</button>
-            </li>
-        </ul>
-    </div>
+        <div class="button-section-up-last">
+            <button class="button button-orange" ng-click="ctrl.scrollUp()">
+                <i class="fa fa-angle-up"></i>
+            </button>
+        </div>
+
+        <!-- Order overview -->
+        <div class="order-overview col-sm-12">
+
+            <h4 class="col-sm-3">3/3 Bestellübersicht</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th class="col-sm-10">Deine Bestellung</th>
+                        <th class="col-sm-2">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Klassische Kuckucksuhr <span class="total-amount">x 1</span></td>
+                        <td>200€</td>
+                    </tr>
+                    <!-- Total items -->
+                    <tr>
+                        <td class="total">Artikelkosten</td>
+                        <td class="total">200€</td>
+                    </tr>
+                    <!-- Total shipping -->
+                    <tr>
+                        <td class="total">Versandkosten</td>
+                        <td class="total">200€</td>
+                    </tr>
+                    <!-- Total total -->
+                    <tr>
+                        <td class="total">Summe</td>
+                        <td class="total-total">200€</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!-- / Order overview -->
+
+        <div class="checkout-payment col-sm-12">
+            <ul class="list-group checkout-box">
+                <li class="list-group-item">
+                    <div class="checkbox-item" ng-class="{ 'active': ctrl.check.pay.paypal }">
+                        <input type="checkbox" ng-model="ctrl.check.pay.paypal"> Paypal <div class="fa fa-cc-paypal fa-3x"></div>
+                    </div>
+                    <div class="checkbox-item" ng-class="{ 'active': ctrl.check.pay.credit }">
+                        <input type="checkbox" ng-model="ctrl.check.pay.credit"> KreditKarte
+                            <div class="fa fa-cc-mastercard fa-3x"></div>
+                            <div class="fa fa-cc-visa fa-3x"></div>
+                            <div class="fa fa-cc-stripe fa-3x"></div>
+                    </div>
+                    <div class="checkbox-item" ng-class="{ 'active': ctrl.check.pay.transfer }">
+                        <input type="checkbox" ng-model="ctrl.check.pay.transfer"> Überweißung
+                            <div class="fa fa-money fa-3x"></div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <div class="checkbox-item">
+                        <input type="checkbox" ng-model="ctrl.check.discount"> Ich habe einen Rabatt-Code
+                    </div>
+                    <div class="checkbox-item checkbox-group" ng-show="ctrl.check.discount">
+                        <input type="text" class="form-control">
+                        <button type="button" class="button">Abschicken</button>
+                    </div>
+                </li>
+                <li class="list-group-item checkout-final">
+                    <span><input type="checkbox"> Ich akzeptiere das Widerrufsrecht</span>
+                    <span><input type="checkbox"> Ich akzeptiere die AGBs</span>
+                    <button type="submit" class="button" ng-click="ctrl.submitCheckout()">Jetzt zahlungspflichtig kaufen</button>
+                </li>
+            </ul>
+        </div>
+    </div><!-- / Section 3 -->
 
 </from>
