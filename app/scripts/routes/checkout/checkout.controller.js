@@ -31,7 +31,12 @@
                     loopBottom: false,
                     loopTop: false,
                     css3: true,
-                    navigation: false,
+                    navigation: false, /*{
+                        'textColor': '#FFA600',
+                        'bulletsColor': '#333',
+                        'position': 'left',
+                        'tooltips': []
+                    },*/
                     normalScrollElements: null,
                     normalScrollElementTouchThreshold: 5,
                     touchSensitivity: 5,
@@ -44,6 +49,12 @@
                     afterLoad: function(anchorLink, index){
                     },
                     afterRender: function(){
+
+                        // remove the anchor links
+                        /*$('#pp-nav a').css({
+                            'pointer-events': 'none',
+                            'cursor': 'default'
+                        });*/
 
                         // hide the loader
                         $timeout(function() {
