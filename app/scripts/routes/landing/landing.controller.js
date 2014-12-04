@@ -31,12 +31,12 @@
                     loopBottom: false,
                     loopTop: false,
                     css3: true,
-                    navigation: false/*{
+                    navigation: {
                         'textColor': '#FFA600',
-                        'bulletsColor': '#f2f2f2',
+                        'bulletsColor': '#333',
                         'position': 'left',
-                        'tooltips': ['Start', 'Fertige Produkte', 'Zum Konfigurator']
-                    }*/,
+                        'tooltips': []
+                    },
                     normalScrollElements: null,
                     normalScrollElementTouchThreshold: 5,
                     touchSensitivity: 5,
@@ -49,7 +49,13 @@
                     afterLoad: function(anchorLink, index){
                         checkPillingAnimation(index);
                     },
-                    afterRender: function(){
+                    afterRender: function() {
+
+                        // remove the anchor links
+                        $('#pp-nav a').css({
+                            'pointer-events': 'none',
+                            'cursor': 'default'
+                        });
 
                         // hide the loader
                         $timeout(function() {

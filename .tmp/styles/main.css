@@ -573,6 +573,7 @@ label {
   z-index: 1;
 }
 #landing #product-section h1 {
+  margin-top: 120px;
   margin-bottom: 100px;
   color: #f2f2f2;
 }
@@ -675,6 +676,9 @@ label {
 }
 #landing #configurator-section {
   color: #f2f2f2;
+}
+#landing #configurator-section h1 {
+  margin-top: 120px;
 }
 #landing #configurator-section p {
   padding-top: 20px;
