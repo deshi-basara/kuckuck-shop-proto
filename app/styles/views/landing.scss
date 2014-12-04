@@ -200,6 +200,11 @@
 
                             @include transform(translate3d(-260px, 0, 0));
                             @include transition(transform 0.5s ease-in-out 0.2s, opacity 0.3s ease-in-out 0.2s);
+
+                            a {
+                                color: $kuck-black;
+                                text-decoration: none;
+                            }
                         }
 
                         .config:hover {
