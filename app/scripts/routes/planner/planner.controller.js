@@ -85,6 +85,9 @@
          * Creates a fake shopping card item
          */
         function addToCard() {
+            // open the card
+            $rootScope.$broadcast('card.open');
+            // add it
             $rootScope.$broadcast('card.item');
         }
 
@@ -121,7 +124,7 @@
          * Show loader on $locationChangeStart
          */
         $scope.$on('$locationChangeStart', function(event) {
-            $rootScope.$broadcast('loader.show');
+            //$rootScope.$broadcast('loader.show');
         });
     }
 
