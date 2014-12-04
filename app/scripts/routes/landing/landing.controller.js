@@ -134,6 +134,15 @@
 
             startPlanning: startPlanning
         });
+
+        /////////////////////
+
+        /**
+         * Show loader on $locationChangeStart
+         */
+        $scope.$on('$locationChangeStart', function(event) {
+            $rootScope.$broadcast('loader.show');
+        });
     }
 
 })();

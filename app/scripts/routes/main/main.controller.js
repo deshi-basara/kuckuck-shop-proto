@@ -124,18 +124,14 @@
          * Listens for requests to see the loader.
          */
         $scope.$on('loader.show', function() {
-            $scope.$apply(function() {
-                main.isLoading = true;
-            });
+            main.isLoading = true;
         });
 
         /**
          * Listens for requests to hide the loader.
          */
         $scope.$on('loader.hide', function() {
-            $scope.$apply(function() {
-                main.isLoading = false;
-            });
+            main.isLoading = false;
         });
 
         ////////////////////
