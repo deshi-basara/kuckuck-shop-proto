@@ -89,6 +89,10 @@
             main.bagItems.push('fake');
         });
 
+        $scope.$on('card.open', function() {
+            main.bagOpen = true;
+        });
+
         /**
          * Listens for navigation 'active' changes.
          * @param  {object} broadEvent [Angular broadcast object]
