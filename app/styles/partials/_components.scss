@@ -37,6 +37,13 @@ label {
     box-shadow: 0;
 }
 
+.preis{
+    position: absolute;
+    right: 0%;
+    top: 30%;
+    padding-right: -10px;
+}
+
 .button:hover {
     box-shadow: 0 3px 6px rgba(0,0,0,.16),0 3px 6px rgba(0,0,0,.23);
 
