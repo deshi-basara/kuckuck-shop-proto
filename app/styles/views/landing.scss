@@ -13,7 +13,7 @@
         h1 {
             position: absolute;
             width: 100%;
-            top: 14%;
+            top: 10%;
             color: $kuck-black;
 
             z-index: 2;
@@ -23,6 +23,30 @@
                 color: $kuck-bluer;
             }
 
+    
+            /*&:after {
+                content: '';
+                display: block;
+                margin: 1.75rem auto;
+                width: em(30);
+                height: 0px;
+                border-bottom: solid 1px $kuck-black;
+                text-align: center;
+            }*/
+        }
+
+        h2 {
+            position: absolute;
+            width: 100%;
+            top: 16%;
+            color: $kuck-black;
+
+            z-index: 2;
+
+            span {
+            font-weight: bolder;
+            color: $kuck-bluer;
+            }
             /*&:after {
                 content: '';
                 display: block;
