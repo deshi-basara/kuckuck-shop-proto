@@ -109,6 +109,10 @@
 
         // mark checkout in the navigation as active
         $rootScope.$broadcast('nav.change', 6);
+
+        $timeout(function() {
+            $rootScope.$broadcast('card.close');
+        }, 1000);
     }
 
 })();

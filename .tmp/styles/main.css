@@ -1,3 +1,7 @@
+/*!
+ * Simon Schuster <simon.schuster@hs-furtwangen.de>
+ * Kuckuck-Shop-Proto v0.1.0 (https://github.com/deshi-basara/kuckuck-shop-proto)
+ */
 * {
   box-sizing: border-box;
 }
@@ -76,6 +80,13 @@ label {
   color: #f2f2f2;
   outline: 0 !important;
   box-shadow: 0;
+}
+
+.preis {
+  position: absolute;
+  right: 0%;
+  top: 30%;
+  padding-right: -10px;
 }
 
 .button:hover {
@@ -468,7 +479,7 @@ label {
 #landing #video-section h1 {
   position: absolute;
   width: 100%;
-  top: 14%;
+  top: 10%;
   color: #333333;
   z-index: 2;
   /*&:after {
@@ -482,6 +493,26 @@ label {
   }*/
 }
 #landing #video-section h1 span {
+  font-weight: bolder;
+  color: #4bbfc3;
+}
+#landing #video-section h2 {
+  position: absolute;
+  width: 100%;
+  top: 16%;
+  color: #333333;
+  z-index: 2;
+  /*&:after {
+      content: '';
+      display: block;
+      margin: 1.75rem auto;
+      width: em(30);
+      height: 0px;
+      border-bottom: solid 1px $kuck-black;
+      text-align: center;
+  }*/
+}
+#landing #video-section h2 span {
   font-weight: bolder;
   color: #4bbfc3;
 }

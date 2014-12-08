@@ -93,6 +93,10 @@
             main.bagOpen = true;
         });
 
+        $scope.$on('card.close', function() {
+            main.bagOpen = false;
+        });
+
         /**
          * Listens for navigation 'active' changes.
          * @param  {object} broadEvent [Angular broadcast object]
